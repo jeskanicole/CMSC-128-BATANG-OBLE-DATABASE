@@ -46,7 +46,7 @@
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-    <title>FREE RESPONSIVE HORIZONTAL ADMIN</title>
+    <title>Add Student</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
@@ -60,18 +60,17 @@
 
 </head>
 <body>
+
     <section class="menu-section">
         <div class="container">
-               <div class="col-md-12">
+            <div class="row ">
+                <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
-                        <h1 class="nav navbar-left" >
-                        BATANG OBLE DAY CARE CENTER
-                        </h1>
+                        <h1 class="nav navbar-left">BATANG OBLE DAY CARE CENTER</h1>
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
-                            <li><a href="index.html" class="menu-top-active">HOME</a></li>
-                           <li><a href="form.html">ADD STUDENT</a></li>
-                            
-                            <li><a href="masterlist.php">MASTER LIST</a></li>
+                          <li><a href="index.php" class="menu-top-active">HOME</a></li>
+                          <li><a href="form.php">ADD STUDENT</a></li>
+                          <li><a href="masterlist.php">MASTER LIST</a></li>
 
                         </ul>
                     </div>
@@ -80,11 +79,12 @@
             </div>
         </div>
     </section>
+
      <!-- MENU SECTION END-->
     <div class="content-wrapper">
         <center><div class="container">
             <center><div class="row">
-                <div class="col-md-9 col-sm-0 col-xs-0">
+                <div class="col-md-12 col-sm-0 col-xs-0">
                    <div class="panel panel-info">
                         <div class="panel-heading">
                            Batang Oble Day Care Center Application Form
