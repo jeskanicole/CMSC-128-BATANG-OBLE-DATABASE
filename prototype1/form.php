@@ -8,7 +8,7 @@
     $MyPassword = "";
 
     //Database
-    $MyDBName = 'osfa_db';
+    $MyDBName = 'batangoble_db';
 
     //Start Connection
     $MyConnection = mysqli_connect($MyServer, $MyUserName, $MyPassword, $MyDBName);
@@ -46,7 +46,7 @@
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-    <title>FREE RESPONSIVE HORIZONTAL ADMIN</title>
+    <title>Add Student</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
@@ -94,7 +94,7 @@
                                   <div class="container">
                                     <div class="form-group row">
                                       <label for="example-number-input" class="col-2 col-form-label">Student Name</label>
-                                      <div class="col-10 col-md-10" >
+                                      <div class="col-8 col-md-8" >
                                         <input class="form-control" name = "sname"> 
                                       </div>
                                     </div>
