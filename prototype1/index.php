@@ -26,14 +26,11 @@
             <div class="row ">
                 <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
-                        <h1 class="nav navbar-left" >
-                        BATANG OBLE DAY CARE CENTER
-                        </h1>
+                        <h1 class="nav navbar-left">BATANG OBLE DAY CARE CENTER</h1>
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
-                            <li><a href="index.html" class="menu-top-active">HOME</a></li>
-                           <li><a href="form.php">ADD STUDENT</a></li>
-                            
-                            <li><a href="masterlist.php">MASTER LIST</a></li>
+                          <li><a href="index.php" class="menu-top-active">HOME</a></li>
+                          <li><a href="form.php">ADD STUDENT</a></li>
+                          <li><a href="masterlist.php">MASTER LIST</a></li>
 
                         </ul>
                     </div>
@@ -48,7 +45,7 @@
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">HOME PAGE</h4>
+                <h1 class="header-line">HOMEPAGE</h1>
             </div>
         </div>
             
