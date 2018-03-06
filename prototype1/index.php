@@ -28,9 +28,9 @@
                     <div class="navbar-collapse collapse ">
                         <h1 class="nav navbar-left">BATANG OBLE DAY CARE CENTER</h1>
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
-                          <li><a href="index.php" class="menu-top-active">HOME</a></li>
-                          <li><a href="form.php">ADD STUDENT</a></li>
-                          <li><a href="masterlist.php">MASTER LIST</a></li>
+                          <li><a href="index.php" class="menu-top-active"><i class="fa fa-home"></i> HOME</a></li>
+                          <li><a href="form.php"><i class="fa fa-user"></i> ADD STUDENT</a></li>
+                          <li><a href="masterlist.php"><i class="fa fa-file-text-o"></i> MASTER LIST</a></li>
 
                         </ul>
                     </div>
@@ -51,20 +51,7 @@
             
             <div class="row">
 
-            <div class="col-md-12" >
-                <div class="alert alert-info text-center">
-                  <h3> BATANG OBLE DAY CARE CENTER</h3> 
-                  <p>
-                    The Batang Oble Day Care Center of the University of the Philippines-Baguio is now accepting enrolees from ages 0-5. Day Care Center provides wholistic child care, informal early childhood education that nurture physical, intellectual, social and emotional development of every kid in a safe and child friendly environment.
-                  </p>
-                  <p>
-                    Given the limited facility, enrollees will be limited to 25 kids who are either children and dependents of UPB Faculty, REPS and Admin Staff regardless of employment status, UPB Alumni and students and Agency employees assigned at UP Baguio.
-                  </p>
-                  <p>
-                    For other details and inquiries, please get in touch with Ms. Julie “Duli” E. Tuguinay, at the Office of Counselling and Guidance. You may also call (074-442-0363) or 09065708557 or visit the Day Care Centre located at the Human Kinetics Building.
-                  </p>
-                </div>
-              </div>
+            
 
               <div class="col-md-12">
                   <div id="carousel-example" class="carousel slide slide-bdr" data-ride="carousel" >
@@ -99,6 +86,21 @@
               </div>
       
           </div>
+
+          <div class="col-md-12" >
+                
+                  <h3> BATANG OBLE DAY CARE CENTER</h3> 
+                  <p>
+                    The Batang Oble Day Care Center of the University of the Philippines-Baguio is now accepting enrolees from ages 0-5. Day Care Center provides wholistic child care, informal early childhood education that nurture physical, intellectual, social and emotional development of every kid in a safe and child friendly environment.
+                  </p>
+                  <p>
+                    Given the limited facility, enrollees will be limited to 25 kids who are either children and dependents of UPB Faculty, REPS and Admin Staff regardless of employment status, UPB Alumni and students and Agency employees assigned at UP Baguio.
+                  </p>
+                  <p>
+                    For other details and inquiries, please get in touch with Ms. Julie “Duli” E. Tuguinay, at the Office of Counselling and Guidance. You may also call (074-442-0363) or 09065708557 or visit the Day Care Centre located at the Human Kinetics Building.
+                  </p>
+                
+            </div>
           </div>
             
     </div>

@@ -30,7 +30,7 @@
                         BATANG OBLE DAY CARE CENTER
                         </h1>
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
-                            <li><a href="index.php" class="menu-top-active"><i class="fa fa-home"></i> HOME</a></li>
+                            <li><a href="index.php" class="menu-top-active">HOME</a></li>
                            <li><a href="form.php"><i class="fa fa-user"></i> ADD STUDENT</a></li>
                             
                             <li><a href="masterlist.php"><i class="fa fa-file-text-o"></i> MASTER LIST</a></li>
@@ -38,8 +38,8 @@
                             <li>
                                 <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"><i class="fa fa-arrow-circle-down"></i> EXPORT<i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="ui.html"><i class="fa fa-file-pdf-o"></i>  TO PDF</a></li>
-                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa fa-file-excel-o"></i>  TO EXCEL</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="ui.html">TO PDF</a></li>
+                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#">TO EXCEL</a></li>
                                 </ul>
                             </li>
 
@@ -80,8 +80,6 @@
                                             <th>Contact Number</th>
                                             <th>Parent/Guardian Type</th>
                                             <th>Mode of Payment</th>
-                                            <th>Edit</th>
-                                            <th>Delete</th>
                                         </tr>
                                     </thead>
                                     

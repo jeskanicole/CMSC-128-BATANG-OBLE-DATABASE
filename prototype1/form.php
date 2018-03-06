@@ -33,7 +33,7 @@
         mysqli_query($MyConnection, "INSERT INTO STUDENT (STUD_NAME, STUD_SEX, STUD_BIRTHDAY, STUD_AGE, STUD_PARENT, STUD_ADD,PAR_CONTACT, PAR_EMAIL, PAR_TYPE, MODE_PAY, AMNT_PAID, D_PAID) VALUES ('$studname','$studsex','$studbirthday','$studage','$parname','$studaddress','$parcontact','$paremail','$gtype','$paymode','$amntpaid','$datepaid');");
 
         echo "<script>alert('Added Successfully!');
-            location = 'list.php?type=$type';</script>";
+            location = 'masterlist.php';</script>";
     }
 ?>
 <!DOCTYPE html>
@@ -46,7 +46,7 @@
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-    <title>Add Student</title>
+    <title>FREE RESPONSIVE HORIZONTAL ADMIN</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
@@ -60,17 +60,17 @@
 
 </head>
 <body>
-
-    <section class="menu-section">
+    <!-- LOGO HEADER END-->
+     <section class="menu-section">
         <div class="container">
             <div class="row ">
                 <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
                         <h1 class="nav navbar-left">BATANG OBLE DAY CARE CENTER</h1>
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
-                          <li><a href="index.php" class="menu-top-active">HOME</a></li>
-                          <li><a href="form.php">ADD STUDENT</a></li>
-                          <li><a href="masterlist.php">MASTER LIST</a></li>
+                          <li><a href="index.php" class="menu-top-active"><i class="fa fa-home"></i> HOME</a></li>
+                          <li><a href="form.php"><i class="fa fa-user"></i> ADD STUDENT</a></li>
+                          <li><a href="masterlist.php"><i class="fa fa-file-text-o"></i> MASTER LIST</a></li>
 
                         </ul>
                     </div>
@@ -79,7 +79,6 @@
             </div>
         </div>
     </section>
-
      <!-- MENU SECTION END-->
     <div class="content-wrapper">
         <center><div class="container">

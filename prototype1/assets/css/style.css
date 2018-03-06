@@ -2,9 +2,7 @@
 /*=============================================================
     Authour URI: www.binarytheme.com
     License: Commons Attribution 3.0
-
     http://creativecommons.org/licenses/by/3.0/
-
     100% Free To use For Personal And Commercial Use.
     IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
    
@@ -51,7 +49,7 @@ body {
     padding: 20px;
 }
 #menu-top a {
-    color:#000;
+    color:#ffffff;
     text-decoration:none;
     font-weight:500;
     padding: 25px 15px 25px 15px;
@@ -218,4 +216,3 @@ height: 60px;
     .footer-section a, .footer-section a:hover {
         color:#000;
     }
-
