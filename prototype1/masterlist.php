@@ -24,7 +24,7 @@
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-    <title>Master List</title>
+    <title>FREE RESPONSIVE HORIZONTAL ADMIN</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
@@ -86,7 +86,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered table-hover" id="dataTables-example">
+                                <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
                                             <th>Name of Child</th>
@@ -117,12 +117,10 @@
                                                 echo '<td>'.$MyResults['STUD_SEX'].'</td>';
                                                 echo '<td>'.$MyResults['STUD_BIRTHDAY'].'</td>';
                                                 echo '<td>'.$MyResults['STUD_AGE'].'</td>';
-                                                echo '<td>'.$MyResults['PARENT_NAME'].'</td>';
-                                                echo '<td>'.$MyResults['PARENT_CONTACT'].'</td>';
-                                                echo '<td>'.$MyResults['PARENT_TYPE'].'</td>';
-                                                echo '<td>'.$MyResults['PAYMENT_TYPE'].'</td>';
-                                                echo '<td> </td>';
-                                                echo '<td> </td>';
+                                                echo '<td>'.$MyResults['STUD_PARENT'].'</td>';
+                                                echo '<td>'.$MyResults['PAR_CONTACT'].'</td>';
+                                                echo '<td>'.$MyResults['PAR_TYPE'].'</td>';
+                                                echo '<td>'.$MyResults['MODE_PAY'].'</td>';
                                             }
                                         }
                                     ?>

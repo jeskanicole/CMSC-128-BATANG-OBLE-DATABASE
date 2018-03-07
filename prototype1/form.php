@@ -25,7 +25,7 @@
         $paymode = $_POST['payment_mode'];
         $amntpaid = $_POST['apaid'];
         $datepaid= $_POST['dpaid'];
-        mysqli_query($MyConnection, "INSERT INTO STUDENT (STUD_NAME, STUD_SEX, STUD_BIRTHDAY, STUD_AGE, STUD_PARENT, STUD_ADD,PAR_CONTACT, PAR_EMAIL, PAR_TYPE, MODE_PAY, AMNT_PAID, D_PAID) VALUES ('$studname','$studsex','$studbirthday','$studage','$parname','$studaddress','$parcontact','$paremail','$gtype','$paymode','$amntpaid','$datepaid');");
+        mysqli_query($MyConnection, "INSERT INTO STUDENT (STUD_NAME, STUD_SEX, STUD_BIRTHDAY, STUD_AGE, STUD_PARENT,PAR_CONTACT, PAR_TYPE, MODE_PAY) VALUES ('$studname','$studsex','$studbirthday','$studage','$parname','$parcontact','$gtype','$paymode');");
         echo "<script>alert('Added Successfully!');
             location = 'masterlist.php';</script>";
     }
@@ -40,7 +40,7 @@
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-    <title>Add Student</title>
+    <title>FREE RESPONSIVE HORIZONTAL ADMIN</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
@@ -61,7 +61,7 @@
                 <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
                         <img class="nav navbar-left" src="uplogo.png" width="75" height="75" hspace="20">
-                        <h1 class="nav navbar-left">BATANG OBLE DAY CARE CENTER</h1>
+                        <h1 class="nav navbar-left">  BATANG OBLE DAY CARE CENTER</h1>
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
                           <li><a href="index.php" class="menu-top-active"><i class="fa fa-home"></i> HOME</a></li>
                           <li><a href="form.php"><i class="fa fa-user"></i> ADD STUDENT</a></li>
@@ -140,7 +140,7 @@
                                   </div>
                                   <label for="example-number-input" class="col-2 col-form-label">Type of Guardian</label>
                                   <div class="col-10 col-md-4">
-                                    <select name="type-guardian" class = "form-control">
+                                    <select name="type_guardian" class = "form-control">
                                       <option value="faculty">Faculty</option>
                                       <option value="Admin/Reps">Admin/REPS</option>
                                       <option value="student">Student</option>
@@ -152,7 +152,7 @@
                                 <div class="form-group row">
                                   <label for="example-number-input" class="col-2 col-form-label">Payment Mode</label>
                                   <div class="col-10 col-md-2">
-                                    <select name="payment-mode" class = "form-control">
+                                    <select name="payment_mode" class = "form-control">
                                       <option value="monthly">Monthly</option>
                                       <option value="drop-in">Drop-in</option>
                                     </select>
