@@ -26,8 +26,8 @@
         <div class="container">
                <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
-                        <h1 class="nav navbar-left" >
-                        BATANG OBLE DAY CARE CENTER
+                        <img class="nav navbar-left" src="uplogo.png" width="75" height="75" hspace="20">
+                        <h1 class="nav navbar-left" >BATANG OBLE DAY CARE CENTER
                         </h1>
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
                             <li><a href="index.php" class="menu-top-active">HOME</a></li>

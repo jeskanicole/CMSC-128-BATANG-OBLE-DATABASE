@@ -26,7 +26,8 @@
             <div class="row ">
                 <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
-                        <h1 class="nav navbar-left">BATANG OBLE DAY CARE CENTER</h1>
+                        <img class="nav navbar-left" src="uplogo.png" width="75" height="75" hspace="20">
+                        <h1 class="nav navbar-left">  BATANG OBLE DAY CARE CENTER</h1>
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
                           <li><a href="index.php" class="menu-top-active"><i class="fa fa-home"></i> HOME</a></li>
                           <li><a href="form.php"><i class="fa fa-user"></i> ADD STUDENT</a></li>
@@ -84,7 +85,7 @@
                     </a>
                   </div>
               </div>
-      
+          
           </div>
 
           <div class="col-md-12" >

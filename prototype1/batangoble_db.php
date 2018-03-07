@@ -2,22 +2,31 @@
 	$server = "localhost:3306";
 	$user = "root";
 	$pass = "";
-	$db = "batangoble_db.php";
+	$db = "batangoble_db";
 	$conn = mysqli_connect($server, $user, $pass, $db);
 	if(!$conn) die(mysqli_error($conn));
 
 	$query = "CREATE TABLE STUDENT
 	(
 		STUD_NAME VARCHAR(100) NOT NULL,
-		STUD_SEX VARCHAR(10) NOT NULL,
+		STUD_SEX CHAR(1) NOT NULL,
 		STUD_BIRTHDAY DATE NOT NULL,
-		STUD_AGE VARCHAR(2) NOT NULL,
+		STUD_AGE TINYINT(1) UNSIGNED NOT NULL,
 		PARENT_NAME VARCHAR(100) NOT NULL,
 		PARENT_CONTACT VARCHAR(11) NOT NULL,
 		PAYMENT_TYPE VARCHAR(20) NOT NULL,
-		DATE_APPLICATION DATE NOT NULL
+		/*DATE_APPLICATION DATE NOT NULL*/
 	)";
 	mysqli_query($conn, $query);
+
+	$query = "INSERT INTO STUDENT VALUES
+	('Amalia Rita Marie R.', 'F', '2016-06-22', 1, 'Thalia Ingrid Rulla', '09067228227', 'Student', 'Monthly')
+	";
+	mysqli_query($conn, $query);
+
+
+
+
 
 	$query = "CREATE TABLE PAYMENT(
 		PAYMENT_TYPE VARCHAR(50) NOT NULL,
