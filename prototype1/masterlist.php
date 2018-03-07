@@ -1,4 +1,20 @@
-﻿<!DOCTYPE html>
+﻿<?php
+    session_start();
+    error_reporting(0);
+
+    //Server Credentials
+    $MyServerName = "localhost";
+    $MyUserName = "root";
+    $MyPassword = "";
+
+    //Database
+    $MyDBName = 'batangoble_db';
+
+    $MyConnection = mysqli_connect($MyServer, $MyUserName, $MyPassword, $MyDBName);
+?>
+
+
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -32,7 +48,8 @@
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
                             <li><a href="index.php" class="menu-top-active"><i class="fa fa-home"></i> HOME</a></li>
                            <li><a href="form.php"><i class="fa fa-user"></i> ADD STUDENT</a></li>
-                            
+                           <li><a href="masterlist.php"><i class="fa fa-file-text-o"></i> MASTER LIST</a></li>
+                            <!--
                             <li><a href="masterlist.php"><i class="fa fa-file-text-o"></i> MASTER LIST</a></li>
 
                             <li>
@@ -42,7 +59,7 @@
                                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa fa-file-excel-o"></i>  TO EXCEL</a></li>
                                 </ul>
                             </li>
-
+                            -->
                         </ul>
                     </div>
                 </div>
@@ -85,6 +102,40 @@
                                         </tr>
                                     </thead>
                                     
+                                    <?php
+                                    $MySearchQuery = "SELECT * FROM student";
+                                    $MyValues = $MyConnection -> query($MySearchQuery);
+
+                                        if (($MyValues -> num_rows) > 0)
+                                        {
+                                            while ($MyResults = $MyValues -> fetch_assoc())
+                                            {
+                                                
+                                                
+                                                echo '<tr>';
+                                                echo '<td>'.$MyResults['name'].'</a></td>';
+                                                echo '<td>'.$MyResults['sex'].'</td>';
+                                                echo '<td>'.$MyResults['birthday'].'</td>';
+                                                echo '<td>'.$MyResults['sage'].'</td>';
+                                                echo '<td>'.$MyResults['pname'].'</td>';
+                                                echo '<td>'.$MyResults['pcontact'].'</td>';
+                                                echo '<td>'.$MyResults['type_guardian'].'</td>';
+                                                echo '<td>'.$MyResults['payment_mode'].'</td>';
+                                            }
+                                        }
+                                    ?>
+                            <script type="text/javascript">
+                                function deleteconfig()
+                                {
+                                    var del = confirm('Are you sure you want to delete this?');
+                                    if(del == true)
+                                    {
+                                        alert ("Successfully Deleted!");
+                                    }
+
+                                    return del;
+                                }
+                            </script>
                                     
                                 </table>
                             </div>
