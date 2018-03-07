@@ -24,7 +24,7 @@
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-    <title>Master List</title>
+    <title>FREE RESPONSIVE HORIZONTAL ADMIN</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
@@ -113,9 +113,9 @@
                                                 
                                                 
                                                 echo '<tr>';
-                                                echo '<td>'.$MyResults['name'].'</a></td>';
+                                                echo '<td>'.$MyResults['sname'].'</a></td>';
                                                 echo '<td>'.$MyResults['sex'].'</td>';
-                                                echo '<td>'.$MyResults['birthday'].'</td>';
+                                                echo '<td>'.$MyResults['sbirthday'].'</td>';
                                                 echo '<td>'.$MyResults['sage'].'</td>';
                                                 echo '<td>'.$MyResults['pname'].'</td>';
                                                 echo '<td>'.$MyResults['pcontact'].'</td>';

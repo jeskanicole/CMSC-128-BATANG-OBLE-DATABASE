@@ -6,15 +6,11 @@
     $MyServerName = "localhost";
     $MyUserName = "root";
     $MyPassword = "";
-
     //Database
     $MyDBName = 'batangoble_db';
-
     //Start Connection
     $MyConnection = mysqli_connect($MyServer, $MyUserName, $MyPassword, $MyDBName);
-
     $type = $_GET['type'];
-
     if($_POST['save'])
     {
         $studname = $_POST['sname'];
@@ -25,13 +21,11 @@
         $studaddress = $_POST['saddress'];
         $parcontact = $_POST['pcontact'];
         $paremail = $_POST['pemail'];
-        $gtype = $_POST['type-guardian'];
-        $paymode = $_POST['payment-mode'];
+        $gtype = $_POST['type_guardian'];
+        $paymode = $_POST['payment_mode'];
         $amntpaid = $_POST['apaid'];
         $datepaid= $_POST['dpaid'];
-
         mysqli_query($MyConnection, "INSERT INTO STUDENT (STUD_NAME, STUD_SEX, STUD_BIRTHDAY, STUD_AGE, STUD_PARENT, STUD_ADD,PAR_CONTACT, PAR_EMAIL, PAR_TYPE, MODE_PAY, AMNT_PAID, D_PAID) VALUES ('$studname','$studsex','$studbirthday','$studage','$parname','$studaddress','$parcontact','$paremail','$gtype','$paymode','$amntpaid','$datepaid');");
-
         echo "<script>alert('Added Successfully!');
             location = 'masterlist.php';</script>";
     }
