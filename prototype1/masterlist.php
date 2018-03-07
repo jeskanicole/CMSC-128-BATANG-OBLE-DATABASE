@@ -121,6 +121,8 @@
                                                 echo '<td>'.$MyResults['pcontact'].'</td>';
                                                 echo '<td>'.$MyResults['type_guardian'].'</td>';
                                                 echo '<td>'.$MyResults['payment_mode'].'</td>';
+                                                echo '<td>'.$MyResults['edit'].'</td>';
+                                                echo '<td>'.$MyResults['delete'].'</td>';
                                             }
                                         }
                                     ?>
