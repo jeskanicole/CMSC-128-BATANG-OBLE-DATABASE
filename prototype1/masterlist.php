@@ -103,7 +103,7 @@
                                     </thead>
                                     
                                     <?php
-                                    $MySearchQuery = "SELECT * FROM student";
+                                    $MySearchQuery = "SELECT * FROM STUDENT";
                                     $MyValues = $MyConnection -> query($MySearchQuery);
 
                                         if (($MyValues -> num_rows) > 0)
@@ -113,16 +113,16 @@
                                                 
                                                 
                                                 echo '<tr>';
-                                                echo '<td>'.$MyResults['sname'].'</a></td>';
-                                                echo '<td>'.$MyResults['sex'].'</td>';
-                                                echo '<td>'.$MyResults['sbirthday'].'</td>';
-                                                echo '<td>'.$MyResults['sage'].'</td>';
-                                                echo '<td>'.$MyResults['pname'].'</td>';
-                                                echo '<td>'.$MyResults['pcontact'].'</td>';
-                                                echo '<td>'.$MyResults['type_guardian'].'</td>';
-                                                echo '<td>'.$MyResults['payment_mode'].'</td>';
-                                                echo '<td>'.$MyResults['edit'].'</td>';
-                                                echo '<td>'.$MyResults['delete'].'</td>';
+                                                echo '<td>'.$MyResults['STUD_NAME'].'</a></td>';
+                                                echo '<td>'.$MyResults['STUD_SEX'].'</td>';
+                                                echo '<td>'.$MyResults['STUD_BIRTHDAY'].'</td>';
+                                                echo '<td>'.$MyResults['STUD_AGE'].'</td>';
+                                                echo '<td>'.$MyResults['PARENT_NAME'].'</td>';
+                                                echo '<td>'.$MyResults['PARENT_CONTACT'].'</td>';
+                                                echo '<td>'.$MyResults['PARENT_TYPE'].'</td>';
+                                                echo '<td>'.$MyResults['PAYMENT_TYPE'].'</td>';
+                                                echo '<td> </td>';
+                                                echo '<td> </td>';
                                             }
                                         }
                                     ?>
