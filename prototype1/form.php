@@ -8,7 +8,7 @@
     $MyPassword = "";
 
     //Database
-    $MyDBName = 'osfa_db';
+    $MyDBName = 'batangoble_db';
 
     //Start Connection
     $MyConnection = mysqli_connect($MyServer, $MyUserName, $MyPassword, $MyDBName);
