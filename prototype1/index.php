@@ -59,13 +59,13 @@
                    
                     <div class="carousel-inner">
                         <div class="item active">
-                            <img src="assets/img/1.jpg" alt="" />     
+                            <img src="pic1.jpg" width="1200" height="400" alt="" />     
                         </div>
                         <div class="item">
-                            <img src="assets/img/2.jpg" alt="" />
+                            <img src="pic2.jpg" width="1200" height="400" alt="" />
                         </div>
                         <div class="item">
-                            <img src="assets/img/3.jpg" alt="" />
+                            <img src="pic3.jpg" width="1200" height="400" alt="" />
                         </div>
                     </div>
 
