@@ -2,7 +2,7 @@
 	$server = "localhost:3306";
 	$user = "root";
 	$pass = "";
-	$db = "batangoble_db.php";
+	$db = "batangoble_db";
 	$conn = mysqli_connect($server, $user, $pass, $db);
 	if(!$conn) die(mysqli_error($conn));
 
