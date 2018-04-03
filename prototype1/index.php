@@ -30,7 +30,15 @@
                         <h1 class="nav navbar-left">  BATANG OBLE DAY CARE CENTER</h1>
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
                           <li><a href="index.php" class="menu-top-active"><i class="fa fa-home"></i> HOME</a></li>
-                          <li><a href="form.php"><i class="fa fa-user"></i> ADD STUDENT</a></li>
+
+                            <li>
+                                <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"><i class="fa fa-plus"></i> ADD <i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="form_student.php"><i class="fa fa-user"></i> STUDENT</a></li>
+                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="form_sa.php"><i class="fa fa-user"></i> STUDENT ASSISTANT</a></li>
+                                </ul>
+                            </li>
+
                           <li><a href="masterlist.php"><i class="fa fa-file-text-o"></i> MASTER LIST</a></li>
 
                         </ul>
@@ -44,11 +52,7 @@
      <!-- MENU SECTION END-->
     <div class="content-wrapper">
          <div class="container">
-        <div class="row pad-botm">
-            <div class="col-md-12">
-                <h2 class="header-line">HOMEPAGE</h2>
-            </div>
-        </div>
+        
             
             <div class="row">
 
@@ -110,7 +114,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                   &copy; 2014 Yourdomain.com |<a href="http://www.binarytheme.com/" target="_blank"  > Designed by : binarytheme.com</a> 
+                   Designed by students of CMSC 128 (Semester 2, 2017-2018)
                 </div>
 
             </div>
