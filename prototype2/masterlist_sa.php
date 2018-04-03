@@ -67,7 +67,7 @@
                             <li>
                                 <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"><i class="fa fa-arrow-circle-down"></i> EXPORT <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="ui.html"><i class="fa fa-file-pdf-o"></i>  TO PDF</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="masterlist_sa_pdf.php"><i class="fa fa-file-pdf-o"></i>  TO PDF</a></li>
                                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class="fa fa-file-excel-o"></i>  TO EXCEL</a></li>
                                 </ul>
                             </li>
