@@ -13,19 +13,21 @@
     $type = $_GET['type'];
     if($_POST['save'])
     {
-        $studname = $_POST['sname'];
+        $studlastname = $_POST['slastname'];
+        $studfirstname = $_POST['sfirstname'];
         $studsex = $_POST['sex'];
         $studage = $_POST['sage'];
         $studbirthday = $_POST['sbirthday'];
-        $parname = $_POST['pname'];
-        $studaddress = $_POST['saddress'];
+        //$studaddress = $_POST['saddress'];
+        $parlastname = $_POST['plastname'];
+        $parfirstname = $_POST['pfirstname'];
         $parcontact = $_POST['pcontact'];
-        $paremail = $_POST['pemail'];
+        //$paremail = $_POST['pemail'];
         $gtype = $_POST['type_guardian'];
         $paymode = $_POST['payment_mode'];
         $amntpaid = $_POST['apaid'];
         $datepaid= $_POST['dpaid'];
-        mysqli_query($MyConnection, "INSERT INTO STUDENT (STUD_NAME, STUD_SEX, STUD_BIRTHDAY, STUD_AGE, STUD_PARENT,PAR_CONTACT, PAR_TYPE, MODE_PAY) VALUES ('$studname','$studsex','$studbirthday','$studage','$parname','$parcontact','$gtype','$paymode');");
+        mysqli_query($MyConnection, "INSERT INTO STUDENT (STUD_LASTNAME, STUD_FIRSTNAME, STUD_SEX, STUD_BIRTHDAY, STUD_AGE, PAR_LASTNAME, PAR_FIRSTNAME, PAR_CONTACT, PAR_TYPE, MODE_PAY) VALUES ('$studlastname', '$studfirstname', '$studsex','$studbirthday','$studage','$parlastname', '$parfirstname', '$parcontact','$gtype','$paymode');");
         echo "<script>alert('Added Successfully!');
             location = 'masterlist.php';</script>";
     }
@@ -37,10 +39,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
+
+    <link rel="shortcut icon" type="image/png" href="uplogo.png"/>
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-    <title>FREE RESPONSIVE HORIZONTAL ADMIN</title>
+    <title>ADD STUDENT</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
@@ -94,8 +98,9 @@
                                   <div class="container">
                                     <div class="form-group row">
                                       <label for="example-number-input" class="col-2 col-form-label">Student Name</label>
-                                      <div class="col-10 col-md-10" >
-                                        <input class="form-control" name = "sname"> 
+                                      <div class="col-10 col-md-5"> <input class="form-control" name = "slastname" placeholder = "Last Name"> 
+                                      </div>
+                                      <div class="col-10 col-md-5"> <input class="form-control" name = "sfirstname" placeholder = "First Name"> 
                                       </div>
                                     </div>
                                     <div class="form-group row">
@@ -119,11 +124,13 @@
                                 </div>      
                                 <div class="form-group row">
                                   <label for="example-number-input" class="col-2 col-form-label">Parent Name</label>
-                                  <div class="col-10 col-md-10">
-                                    <input class="form-control" name = "pname"> 
-                                  </div>
+                                    <div class="col-10 col-md-5"> <input class="form-control" name = "plastname" placeholder = "Last Name"> 
+                                    </div>
+                                    <div class="col-10 col-md-5"> <input class="form-control" name = "pfirstname" placeholder = "First Name"> 
+                                    </div>
                                 </div>
 
+                                <!--
                                 <div class="form-group row">
                                   <label for="example-number-input" class="col-2 col-form-label">Address</label>
                                   <div class="col-10 col-md-10">
@@ -137,9 +144,10 @@
                                     <input class="form-control" name = "pemail"> 
                                   </div>
                                 </div>
+                                -->
 
                                 <div class="form-group row">
-                                  <label for="example-number-input" class="col-2 col-form-label">Contact#</label>
+                                  <label for="example-number-input" class="col-2 col-form-label">Contact Number</label>
                                   <div class="col-10 col-md-4">
                                     <input class="form-control" name = "pcontact"> 
                                   </div>
@@ -187,7 +195,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                   &copy; 2014 Yourdomain.com |<a href="http://www.binarytheme.com/" target="_blank"  > Designed by : binarytheme.com</a> 
+                   Designed by students of CMSC 128 (Semester 2, 2017-2018)
                 </div>
 
             </div>

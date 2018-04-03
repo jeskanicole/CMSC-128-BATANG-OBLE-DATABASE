@@ -21,6 +21,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
+
+    <link rel="shortcut icon" type="image/png" href="uplogo.png"/>
+    
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
@@ -86,7 +89,6 @@
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                             Advanced Tables
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -171,7 +173,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                   Project for CMSC 128 
+                   Designed by students of CMSC 128 (Semester 2, 2017-2018) 
                 </div>
 
             </div>
