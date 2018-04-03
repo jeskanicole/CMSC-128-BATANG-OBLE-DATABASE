@@ -40,7 +40,12 @@
                               </ul>
                             </li>
 
-                          <li><a href="masterlist.php"><i class="fa fa-file-text-o"></i> MASTER LIST</a></li>
+                          <li><a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"><i class="fa fa-file-text-o"></i> MASTERLIST <i class="fa fa-angle-down"></i></a>
+                              <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="masterlist_student.php"><i class="fa fa-user"></i> STUDENT</a></li>
+                                   <li role="presentation"><a role="menuitem" tabindex="-1" href="masterlist_sa.php"><i class="fa fa-user"></i> STUDENT ASSISTANT</a></li>
+                              </ul>
+                            </li>
 
                         </ul>
                     </div>

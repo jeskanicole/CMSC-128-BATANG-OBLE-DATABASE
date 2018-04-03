@@ -29,7 +29,7 @@
         $datepaid= $_POST['dpaid'];
         mysqli_query($MyConnection, "INSERT INTO STUDENT (STUD_LASTNAME, STUD_FIRSTNAME, STUD_SEX, STUD_BIRTHDAY, STUD_AGE, PAR_LASTNAME, PAR_FIRSTNAME, PAR_CONTACT, PAR_TYPE, MODE_PAY) VALUES ('$studlastname', '$studfirstname', '$studsex','$studbirthday','$studage','$parlastname', '$parfirstname', '$parcontact','$gtype','$paymode');");
         echo "<script>alert('Added Successfully!');
-            location = 'masterlist.php';</script>";
+            location = 'masterlist_student.php';</script>";
     }
 ?>
 <!DOCTYPE html>
@@ -74,8 +74,12 @@
                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="form_sa.php"><i class="fa fa-user"></i> STUDENT ASSISTANT</a></li>
                               </ul>
                             </li>
-                          <li><a href="masterlist.php"><i class="fa fa-file-text-o"></i> MASTER LIST</a></li>
-
+                          <li><a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"><i class="fa fa-file-text-o"></i> MASTERLIST <i class="fa fa-angle-down"></i></a>
+                              <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="masterlist_student.php"><i class="fa fa-user"></i> STUDENT</a></li>
+                                   <li role="presentation"><a role="menuitem" tabindex="-1" href="masterlist_sa.php"><i class="fa fa-user"></i> STUDENT ASSISTANT</a></li>
+                              </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>
