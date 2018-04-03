@@ -24,7 +24,7 @@
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-    <title>FREE RESPONSIVE HORIZONTAL ADMIN</title>
+    <title>MASTERLIST</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
@@ -117,10 +117,14 @@
                                                 echo '<td>'.$MyResults['STUD_SEX'].'</td>';
                                                 echo '<td>'.$MyResults['STUD_BIRTHDAY'].'</td>';
                                                 echo '<td>'.$MyResults['STUD_AGE'].'</td>';
-                                                echo '<td>'.$MyResults['STUD_PARENT'].'</td>';
+                                                echo '<td>'.$MyResults['PAR_NAME'].'</td>';
                                                 echo '<td>'.$MyResults['PAR_CONTACT'].'</td>';
                                                 echo '<td>'.$MyResults['PAR_TYPE'].'</td>';
                                                 echo '<td>'.$MyResults['MODE_PAY'].'</td>';
+                                                echo '<td><a rel="facebox" href="edit.php?name='.$Myresults->STUD_NAME.'">Edit</a></td>';
+                                                echo '<td><a rel="facebox" href="delete.php?name='.$MyResults['STUD_NAME'].'" onclick="return deleteconfig()">Delete</a></td></tr>';
+
+                                                
                                             }
                                         }
                                     ?>
@@ -156,7 +160,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                   &copy; 2014 Yourdomain.com |<a href="http://www.binarytheme.com/" target="_blank"  > Designed by : binarytheme.com</a> 
+                   Project for CMSC 128 
                 </div>
 
             </div>

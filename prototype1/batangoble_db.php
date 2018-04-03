@@ -23,7 +23,6 @@
 	$query = "INSERT INTO STUDENT VALUES
 		('Amalia Rita Marie R. Aquino', 'F', '2016-06-22', 1, 'Thalia Ingrid Rulla', '09067228227', 'Student', 'Monthly'),
 		('Light Alexandre M. Claros', 'M', '2016-09-2016', 1, 'Johannah Marah P. Manio', '09067156445', 'Student', 'Drop in'),
-		('Ysha Nelaijah	Collado', 'F', '2013-09-28', 4, 'Mary Jane Naharilla', '09177657728', 'Alumni', 'Monthly'),
 		('Calvin Lee Custodio', 'M', '2013-08-25', 4, 'Judylyn Custodio (IM Graduate Student)', '09178795266', 'Alumni', 'Drop in'),
 		('Gibson Dwayne Dacay', 'M', '2014-05-07', 2, 'Wyndie Dacay', '09483598772', 'Admin/REPS', 'Drop in'),
 		('John Immanuel Florendo', 'M', '2016-09-08', 1, 'Ma. Rosario Florendo', '09985426982', 'Faculty', 'Monthly'),
