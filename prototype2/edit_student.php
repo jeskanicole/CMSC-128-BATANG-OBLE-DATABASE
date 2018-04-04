@@ -12,47 +12,64 @@
     $MyConnection = mysqli_connect($MyServer, $MyUserName, $MyPassword, $MyDBName);
 
     $slastname = $_GET['slastname'];
+    $sfirstname = $_GET['sfirstname'];
+    $plastname = $_GET['plastname'];
 
-    $query = mysql_query("SELECT * FROM STUDENT WHERE STUD_LASTNAME = '$slastname' AND STUD_FIRSTNAME = '$sfirstname' ");
+    $MySearchQuery = "SELECT * FROM STUDENT WHERE (STUDENT.STUD_LASTNAME = '$slastname' AND STUDENT.STUD_FIRSTNAME = '$sfirstname' AND STUDENT.PAR_LASTNAME = '$plastname');";
+    $MyValues = $MyConnection -> query($MySearchQuery);
 
-    while($result = mysql_fetch_object($query)){
-      $slastname = $result->STUD_LASTNAME;
-      $sfirstname = $result->STUD_FIRSTNAME;
-      $sex = $result->STUD_SEX;
-      $sage = $result->STUD_AGE;
-      $sbirthday = $result->STUD_BIRTHDAY;
-      $plastname = $result->PAR_LASTNAME;
-      $pfirstname = $result->PAR_FIRSTNAME;
-      $pcontact = $result->PAR_CONTACT;
-      $type_guardian = $result->PAR_TYPE;
-      $payment_mode = $result->MODE_PAY;
+    if (($MyValues -> num_rows) > 0){
+
+      while($MyResults = $MyValues -> fetch_assoc()){
+        $slastname = $MyResults['STUD_LASTNAME'];
+        $sfirstname = $MyResults['STUD_FIRSTNAME'];
+        $sex = $MyResults['STUD_SEX'];
+        $sage = $MyResults['STUD_AGE'];
+        $sbirthday = $MyResults['STUD_BIRTHDAY'];
+        $plastname = $MyResults['PAR_LASTNAME'];
+        $pfirstname = $MyResults['PAR_FIRSTNAME'];
+        $pcontact = $MyResults['PAR_CONTACT'];
+        $type_guardian = $MyResults['PAR_TYPE'];
+        $payment_mode = $MyResults['MODE_PAY'];
+      }
     }
 
-    if($_POST['save'])
-    {
-        $studlastname = $_POST['slastname'];
-        $studfirstname = $_POST['sfirstname'];
-        $studsex = $_POST['sex'];
-        $studage = $_POST['sage'];
-        $studbirthday = $_POST['sbirthday'];
-        //$studaddress = $_POST['saddress'];
-        $parlastname = $_POST['plastname'];
-        $parfirstname = $_POST['pfirstname'];
-        $parcontact = $_POST['pcontact'];
-        //$paremail = $_POST['pemail'];
-        $gtype = $_POST['type_guardian'];
-        $paymode = $_POST['payment_mode'];
-        $amntpaid = $_POST['apaid'];
-        $datepaid= $_POST['dpaid'];
+    if($_POST['save']){
+          $studlastname = $_POST['slastname'];
+          $studfirstname = $_POST['sfirstname'];
+          $studsex = $_POST['sex'];
+          $studage = $_POST['sage'];
+          $studbirthday = $_POST['sbirthday'];
+          //$studaddress = $_POST['saddress'];
+          $parlastname = $_POST['plastname'];
+          $parfirstname = $_POST['pfirstname'];
+          $parcontact = $_POST['pcontact'];
+          //$paremail = $_POST['pemail'];
+          $gtype = $_POST['type_guardian'];
+          $paymode = $_POST['payment_mode'];
+          $amntpaid = $_POST['apaid'];
+          $datepaid= $_POST['dpaid'];
 
+          if(empty($studlastname)){
+            $studlastname = $slastname;
+          }
+          if(empty($studfirstname)){
+            $studfirstname = $sfirstname;
+          }
+          if(empty($studsex)){
+            $studsex = $sex;
+          }
+          if(empty($studage)){
+            $studage = $sage;
+          }
 
-        mysqli_query($MyConnection, "UPDATE STUDENT SET STUD_LASTNAME = '$studlastname', STUD_FIRSTNAME = '$studfirstname', STUD_SEX = '$studsex', STUD_AGE = 'studage', STUD_BIRTHDAY = '$studbirthday', PAR_LASTNAME = '$parlastname', PAR_FIRSTNAME = '$parfirstname', PAR_CONTACT = '$parcontact', PAR_TYPE ='$gtype', MODE_PAY = '$paymode' WHERE STUD_LASTNAME = '$slastname' AND STUD_FIRSTNAME = '$sfirstname'");
-        
-        mysqli_query($MyConnection, "INSERT INTO STUDENT (STUD_LASTNAME, STUD_FIRSTNAME, STUD_SEX, STUD_BIRTHDAY, STUD_AGE, PAR_LASTNAME, PAR_FIRSTNAME, PAR_CONTACT, PAR_TYPE, MODE_PAY) VALUES ('$studlastname', '$studfirstname', '$studsex','$studbirthday','$studage','$parlastname', '$parfirstname', '$parcontact','$gtype','$paymode');");
+          $MyQuery = "UPDATE STUDENT SET STUD_LASTNAME = '$studlastname', STUD_FIRSTNAME = '$studfirstname', STUD_SEX = '$studsex', STUD_AGE = 'studage', STUD_BIRTHDAY = '$studbirthday', PAR_LASTNAME = '$parlastname', PAR_FIRSTNAME = '$parfirstname', PAR_CONTACT = '$parcontact', PAR_TYPE ='$gtype', MODE_PAY = '$paymode' WHERE (STUDENT.STUD_LASTNAME = '$slastname' AND STUDENT.STUD_FIRSTNAME = '$sfirstname' AND STUDENT.PAR_LASTNAME = '$plastname');";
+          mysqli_query($MyConnection, $MyQuery);
 
-        echo "<script>alert('Added Successfully!');
-            location = 'masterlist_student.php';</script>";
+          echo "<script>alert('Saved Successfully!');
+              location = 'masterlist_student.php?slastname=$slastname';</script>";
     }
+
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
