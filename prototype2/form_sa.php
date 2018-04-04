@@ -10,21 +10,21 @@
     $MyDBName = 'batangoble_db';
     //Start Connection
     $MyConnection = mysqli_connect($MyServer, $MyUserName, $MyPassword, $MyDBName);
-    $type = $_GET['type'];
+    $salastname = $_GET['salastname'];
     if($_POST['save'])
     {
-        $salastname = $_POST['salastname'];
-        $safirstname = $_POST['safirstname'];
-        $sastudnum  = $_POST['sastudnum'];
-        $sacourse = $_POST['sacourse'];
-        $sacollege = $_POST['sacollege'];
-        $sayear = $_POST['sayear'];
-        $sasex = $_POST['sasex'];
-        $saaddress = $_POST['saaddress'];
-        $saemail = $_POST['saemail'];
-        $sacontact = $_POST['sacontact'];
+        $nsalastname = $_POST['salastname'];
+        $nsafirstname = $_POST['safirstname'];
+        $nsastudnum  = $_POST['sastudnum'];
+        $nsacourse = $_POST['sacourse'];
+        $nsacollege = $_POST['sacollege'];
+        $nsayear = $_POST['sayear'];
+        $nsasex = $_POST['sasex'];
+        $nsaaddress = $_POST['saaddress'];
+        $nsaemail = $_POST['saemail'];
+        $nsacontact = $_POST['sacontact'];
 
-        mysqli_query($MyConnection, "INSERT INTO SA (SA_LASTNAME, SA_FIRSTNAME, SA_STUDNUM, SA_COURSE, SA_COLLEGE, SA_YEAR, SA_SEX, SA_ADDRESS, SA_EMAIL, SA_CONTACT, SA_EMAIL) VALUES ('$salastname', '$safirstname', '$sastudnum','$sacourse','$sacollege','$sayear', '$sasex', '$saaddress','$saemail', '$sacontact');");
+        mysqli_query($MyConnection, "INSERT INTO SA (SA_LASTNAME, SA_FIRSTNAME, SA_STUDNUM, SA_COURSE, SA_COLLEGE, SA_YEAR, SA_SEX, SA_ADDRESS, SA_EMAIL, SA_CONTACT, SA_EMAIL) VALUES ('$nsalastname', '$nsafirstname', '$nsastudnum','$nsacourse','$nsacollege','$nsayear', '$nsasex', '$nsaaddress','$nsaemail', '$nsacontact');");
         echo "<script>alert('Added Successfully!');
             location = 'masterlist_sa.php';</script>";
     }

@@ -10,24 +10,43 @@
     $MyDBName = 'batangoble_db';
     //Start Connection
     $MyConnection = mysqli_connect($MyServer, $MyUserName, $MyPassword, $MyDBName);
-    
+
+    $sastudnum = $_GET['sastudnum'];
     $salastname = $_GET['salastname'];
-    $safirstname = $_GET['safirstname'];
 
-    if($_POST['save'])
-    {
-        $salastname = $_POST['salastname'];
-        $safirstname = $_POST['safirstname'];
-        $sastudnum  = $_POST['sastudnum'];
-        $sacourse = $_POST['sacourse'];
-        $sacollege = $_POST['sacollege'];
-        $sayear = $_POST['sayear'];
-        $sasex = $_POST['sasex'];
-        $saaddress = $_POST['saaddress'];
-        $saemail = $_POST['saemail'];
-        $sacontact = $_POST['sacontact'];
+    $MySearchQuery = "SELECT * FROM SA WHERE (SA.SA_STUDNUM = '$sastudnum' AND SA.SA_LASTNAME = '$salastname');";
+    $MyValues = $MyConnection -> query($MySearchQuery);
 
-        mysqli_query($MyConnection, "INSERT INTO SA (SA_LASTNAME, SA_FIRSTNAME, SA_STUDNUM, SA_COURSE, SA_COLLEGE, SA_YEAR, SA_SEX, SA_ADDRESS, SA_EMAIL, SA_CONTACT, SA_EMAIL) VALUES ('$salastname', '$safirstname', '$sastudnum','$sacourse','$sacollege','$sayear', '$sasex', '$saaddress','$saemail', '$sacontact');");
+    if (($MyValues -> num_rows) > 0){
+     while ($MyResults = $MyValues -> fetch_assoc()){
+      $salastname = $MyResults['SA_LASTNAME'];
+      $safirstname = $MyResults['SA_FIRSTNAME'];
+      $sastudnum = $MyResults['SA_STUDNUM']; 
+      $sacourse = $MyResults['SA_COURSE'];
+      $sacollege = $MyResults['SA_COLLEGE'];
+      $sayear = $MyResults['SA_YEAR'];
+      $sasex = $MyResults['SA_SEX'];
+      $saaddress = $MyResults['SA_ADDRESS'];
+      $saemail = $MyResults['SA_EMAIL'];
+      $sacontact = $MyResults['SA_CONTACT'];
+     }
+    }
+
+    if($_POST['save']){
+        $nsalastname = $_POST['salastname'];
+        $nsafirstname = $_POST['safirstname'];
+        $nsastudnum  = $_POST['sastudnum'];
+        $nsacourse = $_POST['sacourse'];
+        $nsacollege = $_POST['sacollege'];
+        $nsayear = $_POST['sayear'];
+        $nsasex = $_POST['sasex'];
+        $nsaaddress = $_POST['saaddress'];
+        $nsaemail = $_POST['saemail'];
+        $nsacontact = $_POST['sacontact'];
+
+        $MyQuery = "UPDATE SA SET SA_LASTNAME ='$nsalastname', SA_FIRSTNAME = '$nsafirstname', SA_STUDNUM = '$nsastudnum', SA_COURSE = '$nsacourse', SA_COLLEGE = '$nsacollege', SA_YEAR = '$nsayear', SA_SEX = '$nsasex', SA_ADDRESS = '$nsaaddress', SA_EMAIL = '$nsaemail', SA_CONTACT = '$nsacontact' WHERE (SA.SA_STUDNUM = '$sastudnum' AND SA.SA_LASTNAME = '$salastname');";
+        mysqli_query($MyConnection, $MyQuery);
+
         echo "<script>alert('Added Successfully!');
             location = 'masterlist_sa.php';</script>";
     }
