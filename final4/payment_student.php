@@ -85,17 +85,21 @@
 <body>
     <section class="menu-section">
         <div class="container">
-               <div class="col-md-12">
+            <div class="row ">
+                <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
-                        <img class="nav navbar-left" src="uplogo.png" width="75" height="75" hspace="20">
-                        <h1 class="nav navbar-left" > BATANG OBLE DAY CARE CENTER
-                        </h1>
-                        <ul id="menu-top" class="nav navbar-nav navbar-right">
-                            <li><a href="index.php" class="menu-top-active"><i class="fa fa-home"></i> HOME</a></li>
+                        <a href="index.php"><img class="nav navbar-left" src="uplogo.png" width="75" height="75" hspace="20"></a>
+                        <h1 class="nav navbar-left fa-2x">  BATANG OBLE DAY CARE CENTER</h1>
+                        <ul id="menu-top" class="nav nav-new navbar-nav navbar-right">
+                          <li><a href="index.php" class="menu-top-active"><i class="fa fa-home"></i> HOME</a></li>
+                            <li><a href="search.php" class="menu-top-active"><i class="fa fa-search"></i> SEARCH</a></li>
+
                         </ul>
                     </div>
                 </div>
+
             </div>
+        </div>
     </section>
 		<!-- Payment Form-->
 		<div class="container">
@@ -131,12 +135,20 @@
 	</br>
 	</br>
 		<!-- Payment Form -->
-		<h2 class="text-center py-2">Payment Information</h2>
+
+    <div class="content-wrapper">
+        <center><div class="container">
+            <center><div class="row">
+                <div class="col-md-12 col-sm-0 col-xs-0">
+                   <div class="panel panel-info">
+                        <div class="panel-heading">
+                         	Payment
+                        </div>
+                        <div class="panel-body">
 		<center>
 		<form class="form-signin py-3" name="myForm" method="POST" enctype="multipart/form-data" name="addroom" onsubmit="return validateForm()">
 			<div class="container">
 				<div class="form-group row">
-					<div class="form-group row">
                       <label for="example-number-input" class="col-2 col-form-label">Payment Mode</label>
                       <div class="col-10 col-md-2">
                         <select name="pay_mode" class = "form-control">
@@ -152,7 +164,6 @@
                       <div class="col-10 col-md-2">
                         <input class="form-control" name="date_paid" type = "date"> 
                       </div>
-                    </div>
 				</div>
 				<div class="form-group-row">
 					<div class="form-group text-center">
@@ -178,12 +189,21 @@
 			</div>
 		</form>
 	</center>
+</div>
+</div>
+</div>
+</div>
+</center>
+</div>
+</center>
+</div>
+
 
 		<!-- Footer -->
 		<div class = "text-md-center">
 			<p>
 				<a href = "<?php 
-					echo 'list.php?type='.$type.''
+					echo 'masterlist_student.php?type='.$type.''
 				?>"
 				title = "Let's go back!">&#8617; Go Back to the List</a>
 			</p>
