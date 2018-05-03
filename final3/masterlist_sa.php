@@ -103,13 +103,11 @@
                                             <th class = "text-center">Student Number</th>
                                             <th class = "text-center">Last Name</th>
                                             <th class = "text-center">First Name</th>
+                                            <th class = "text-center">Middle Initial</th>
                                             <th class = "text-center">Course</th>
                                             <th class = "text-center">College</th>
                                             <th class = "text-center">Year</th>
                                             <th class = "text-center">Sex</th>
-                                            <th class = "text-center">Address</th>
-                                            <th class = "text-center">Email Address</th>
-                                            <th class = "text-center">Contact Number</th>
                                             <th class = "text-center">Hours Worked</th>
                                             <th class = "text-center">Edit</th>
                                             <th class = "text-center">Delete</th>
@@ -130,13 +128,11 @@
                                                 echo '<td>'.$MyResults['SA_STUDNUM'].'</a></td>';
                                                 echo '<td>'.$MyResults['SA_LASTNAME'].'</a></td>';
                                                 echo '<td>'.$MyResults['SA_FIRSTNAME'].'</a></td>';
+                                                echo '<td>'.$MyResults['SA_MIDDLE'].'</a></td>';
                                                 echo '<td>'.$MyResults['SA_COURSE'].'</td>';
                                                 echo '<td>'.$MyResults['SA_COLLEGE'].'</td>';
                                                 echo '<td>'.$MyResults['SA_YEAR'].'</td>';
                                                 echo '<td>'.$MyResults['SA_SEX'].'</td>';
-                                                echo '<td>'.$MyResults['SA_ADDRESS'].'</td>';
-                                                echo '<td>'.$MyResults['SA_EMAIL'].'</td>';
-                                                echo '<td>'.$MyResults['SA_CONTACT'].'</td>';
                                                 echo '<td>'.$MyResults['SA_HOURS'].'</td>';
                                                 echo '<td><a rel="facebox" href="edit.php?sa='.$Myresults->STUD_NAME.'">Edit</a></td>';
                                                 echo '<td><a rel="facebox" href="delete_sa.php?sanum='.$MyResults['SA_STUDNUM'].'" onClick="return deleteconfig()">Delete</a></td></tr>';

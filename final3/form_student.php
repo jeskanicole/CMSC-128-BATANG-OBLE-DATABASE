@@ -290,12 +290,12 @@
                                   <label for="example-number-input" class="col-2 col-form-label">Type of Employee</label>
                                   <div class="col-10 col-md-4">
                                     <select name="sftype" class = "form-control">
+                                      <option value="--">Not Applicable</option>
                                       <option value="Faculty">Faculty</option>
                                       <option value="Admin/Reps">Admin/REPS</option>
                                       <option value="Student">Student</option>
                                       <option value="Alumni">Alumni</option>
                                       <option value="Agency">Agency</option>
-                                      <option value="--">Not Applicable</option>
                                     </select>
                                   </div>
                                   <label for="example-number-input" class="col-2 col-form-label">Occupation</label>
@@ -340,12 +340,12 @@
                                   <label for="example-number-input" class="col-2 col-form-label">Type of Employee</label>
                                   <div class="col-10 col-md-4">
                                     <select name="smtype" class = "form-control">
+                                      <option value="--">Not Applicable</option>
                                       <option value="Faculty">Faculty</option>
                                       <option value="Admin/Reps">Admin/REPS</option>
                                       <option value="Student">Student</option>
                                       <option value="Alumni">Alumni</option>
                                       <option value="Agency">Agency</option>
-                                      <option value="--">Not Applicable</option>
                                     </select>
                                   </div>
                                   <label for="example-number-input" class="col-2 col-form-label">Occupation</label>
@@ -390,12 +390,12 @@
                                   <label for="example-number-input" class="col-2 col-form-label">Type of Employee</label>
                                   <div class="col-10 col-md-4">
                                     <select name="sgtype" class = "form-control">
+                                      <option value="--">Not Applicable</option>
                                       <option value="Faculty">Faculty</option>
                                       <option value="Admin/Reps">Admin/REPS</option>
                                       <option value="Student">Student</option>
                                       <option value="Alumni">Alumni</option>
                                       <option value="Agency">Agency</option>
-                                      <option value="--">Not Applicable</option>
                                     </select>
                                   </div>
                                   <label for="example-number-input" class="col-2 col-form-label">Occupation</label>
