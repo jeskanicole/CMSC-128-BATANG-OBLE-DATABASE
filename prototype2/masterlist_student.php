@@ -137,7 +137,7 @@
                                                 echo '<td>'.$MyResults['PAR_CONTACT'].'</td>';
                                                 echo '<td>'.$MyResults['PAR_TYPE'].'</td>';
                                                 echo '<td>'.$MyResults['MODE_PAY'].'</td>';
-                                                echo '<td><a rel="facebox" href="edit.php?name='.$Myresults->STUD_NAME.'">Edit</a></td>';
+                                                echo '<td><a rel="facebox" href="edit_student.php?name='.$Myresults->STUD_NAME.'">Edit</a></td>';
                                                 
 
                                                 echo '<td><a rel="facebox" href="delete_student.php?lastname='.$MyResults['STUD_LASTNAME'].'&firstname='.$MyResults['STUD_FIRSTNAME'].'" onClick="return deleteconfig()">Delete</a></td></tr>';
