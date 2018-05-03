@@ -80,7 +80,7 @@
  			{	
  				if($SearchFilter == 0 && $MySearchRequest != "")
  				{
- 					$MySearchQuery = "SELECT * FROM STUDENT WHERE STUDENT.STUD_LASTNAME OR STUDENT.STUD_FIRSTNAME LIKE '%$MySearchRequest%';";
+ 					$MySearchQuery = "SELECT * FROM STUDENT WHERE STUDENT.STUD_LASTNAME LIKE '%$MySearchRequest%' or STUDENT.STUD_FIRSTNAME LIKE '%$MySearchRequest%'; ";
  					$MyValues = $MyConnection -> query($MySearchQuery);
 
  					if (($MyValues -> num_rows) > 0)

@@ -13,9 +13,9 @@
     $type = $_GET['type'];
     if($_POST['save'])
     {
+        $nsastudnum  = $_POST['sasnum'];
         $nsalastname = $_POST['salname'];
         $nsafirstname = $_POST['safname'];
-        $nsastudnum  = $_POST['sasnum'];
         $nsacourse = $_POST['sacse'];
         $nsacollege = $_POST['sacege'];
         $nsayear = $_POST['sayr'];
@@ -141,8 +141,8 @@
                                           <label for="example-number-input" class="col-2 col-form-label">Sex</label>
                                             <div class="col">
                                               <select name="sasx" class = "form-control">
-                                                <option value="female">Female</option>
-                                                <option value="male">Male</option>
+                                                <option value="Female">Female</option>
+                                                <option value="Male">Male</option>
                                               </select>
                                             </div>
                                       </div>

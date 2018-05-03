@@ -125,7 +125,7 @@
                                                 
                                                 echo '<tr>';
                                                 echo '<td>'.$MyResults['APP_YR'].'</a></td>';
-                                                echo '<td>'.$MyResults['STUD_LASTNAME'].'</a></td>';
+                                                echo '<td><a rel="facebox" href="history.php?lastname='.$MyResults['STUD_LASTNAME'].'&firstname='.$MyResults['STUD_FIRSTNAME'].'">'.$MyResults['STUD_LASTNAME'].'</a></td>';
                                                 echo '<td>'.$MyResults['STUD_FIRSTNAME'].'</a></td>';
                                                 //echo '<td>'.$MyResults['STUD_MIDDLEINT'].'</a></td>';
                                                 echo '<td>'.$MyResults['STUD_SEX'].'</td>';

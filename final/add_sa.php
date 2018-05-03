@@ -30,7 +30,7 @@
 
 		$fixedName = mysqli_real_escape_string($MyConnection, $nsname);
 
-		mysqli_query($MyConnection, "INSERT INTO SA (SA_STUDNUM,SA_LASTNAME,SA_FIRSTNAME,SA_COURSE,SA_COLLEGE,SA_YEAR,SA_SEX,SA_ADDRESS,SA_EMAIL,SA_CONTACT) VALUES ('$nsastudnum', '$nsalastname', '$nsafirstname', '$nsacourse', '$nsacollege', '$nsayear', '$nsasex', '$nsaaddress', '$nsaemail', '$nsacontact');");
+		mysqli_query($MyConnection, "INSERT INTO SA (SA_STUDNUM,SA_LASTNAME,SA_FIRSTNAME,SA_COURSE,SA_COLLEGE,SA_YEAR,SA_SEX,SA_ADDRESS,SA_EMAIL,SA_CONTACT) VALUES ('$nsastudnum','$nsalastname', '$nsafirstname', '$nsacourse', '$nsacollege', '$nsayear', '$nsasex', '$nsaaddress', '$nsaemail', '$nsacontact');");
 
 		echo "<script>alert('Added Successfully!');
 			location = 'list.php?type=$type';</script>";

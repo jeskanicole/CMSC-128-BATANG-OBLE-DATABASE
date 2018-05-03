@@ -146,7 +146,7 @@
                 <div class="col-md-12 col-sm-0 col-xs-0">
                    <div class="panel panel-info">
                         <div class="panel-heading">
-                           Batang Oble Day Care Center Application Form <b>(STUDENTS)</b>
+                          <h4> Batang Oble Day Care Center Application Form <b>(STUDENTS)</b> </h4>
                         </div>
                         <div class="panel-body">
                             <form class="form-signin" name="myForm" method="POST" enctype="multipart/form-data" name="addroom" onsubmit="return validateForm()">
@@ -200,9 +200,9 @@
                                     <div class="form-group row">
                                       <label for="example-number-input" class="col-2 col-form-label"> </label>
                                     </div>
-                                    <div class="form-group row">
-                                      <label for="example-number-input" class="col-2 col-form-label"><center>CHILD'S INFORMATION</center></label>
-                                    </div>
+                                    <br>
+                                     <p class="indent"></p> <h3><b>CHILD'S INFORMATION</b></h3>
+                                     <br>
                                     <div class="form-group row">
                                       <label for="example-number-input" class="col-2 col-form-label">Student Name</label>
                                       <div class="col-10 col-md-4"> <input class="form-control" name = "slastname" placeholder = "Last Name"> 
@@ -249,9 +249,9 @@
                                 <div class="form-group row">
                                   <label for="example-number-input" class="col-2 col-form-label"> </label>
                                 </div> 
-                                <div class="form-group row">
-                                  <label for="example-number-input" class="col-2 col-form-label">FAMILY BACKGROUND</label>
-                                </div>
+                                <br>
+                                  <p class="indent"></p> <h3><b>FAMILY BACKGROUND</b></h3>
+                                  <br>
                                 <div class="form-group row">
                                       <label for="example-number-input" class="col-2 col-form-label">Father's Name</label>
                                       <div class="col-10 col-md-4"> <input class="form-control" name = "sflastname" placeholder = "Last Name"> 
@@ -390,10 +390,9 @@
                                 </div>
                               </div>
 
-                            
-                            <div class="form-group row">
-                            <p class="indent"></p> <b>MEDICAL BACKGROUND</b>
-                            </div>
+                            <br>
+                            <p class="indent"></p> <h3><b>MEDICAL BACKGROUND</b></h3>
+                            <br>
                             <div class="form-group row">
                               <p class="indent"></p><b> 1. Does your child have any medication? If yes, explain. </b>
                             </div>
@@ -401,10 +400,69 @@
                              <div class="col-10 col-md-12"> <input class="form-control" name = "smbone"> 
                                 </div>
                             </div>
+                            <div class="form-group row">
+                              <p class="indent"></p><b> 2. Does your child have any allergies? If yes, specify.</b>
+                            </div>
+                            <div class="form-group row">
+                             <div class="col-10 col-md-12"> <input class="form-control" name = "smbtwo"> 
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                              <p class="indent"></p><b> 3. Does your child have any fears? If yes, specify.</b>
+                            </div>
+                            <div class="form-group row">
+                             <div class="col-10 col-md-12"> <input class="form-control" name = "smbthree"> 
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                              <p class="indent"></p><b> 4. Does your child have any sleeping time? If yes, write the time he/ she would sleep. </b>
+                            </div>
+                            <div class="form-group row">
+                             <div class="col-10 col-md-12"> <input class="form-control" name = "smbfour"> 
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                              <p class="indent"></p><b> 5. Does your child easily get frustrated? If yes, in what way? </b>
+                            </div>
+                            <div class="form-group row">
+                             <div class="col-10 col-md-12"> <input class="form-control" name = "smbfive"> 
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                              <p class="indent"></p><b> 6. Does your child have any other Psychological or Medical conditions? If yes, please explain.</b>
+                            </div>
+                            <div class="form-group row">
+                             <div class="col-10 col-md-12"> <input class="form-control" name = "smbsix"> 
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                              <p class="indent"></p><b> 7. Anything else about your child that the teacher should know? </b>
+                            </div>
+                            <div class="form-group row">
+                             <div class="col-10 col-md-12"> <input class="form-control" name = "smbseven"> 
+                                </div>
+                            </div>
 
-
-
-
+                            <br>
+                            <p class="indent"></p> <h3><b>CONTACT PERSON IN CASE OF EMERGENCY</b></h3>
+                            <br>
+                            <div class="form-group row">
+                              <label for="example-number-input" class="col-2 col-form-label">Name</label>
+                              <div class="col-10 col-md-4"> <input class="form-control" name = "selastname" placeholder = "Last Name"> 
+                              </div>
+                              <div class="col-10 col-md-4"> <input class="form-control" name = "sefirstname" placeholder = "First Name"> 
+                              </div>
+                              <div class="col-10 col-md-2"> <input class="form-control" name = "semiddleint" placeholder = "Middle Initial"> 
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label for="example-number-input" class="col-2 col-form-label">Address</label>
+                              <div class="col-10 col-md-4"> <input class="form-control" name = "seaddress">
+                              </div>
+                              <label for="example-number-input" class="col-2 col-form-label">Contact Number</label>
+                              <div class="col-10 col-md-4"> <input class="form-control" name = "secontact">
+                              </div>
+                            </div>
 
 
 
