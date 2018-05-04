@@ -20,13 +20,14 @@
         $nsacourse = $_POST['sacse'];
         $nsacollege = $_POST['sacege'];
         $nsayear = $_POST['sayr'];
-        $nsasex = $_POST['sasx'];
+        $nsasex = $_POST['sasex'];
         $nsaaddress = $_POST['saadd'];
         $nsaemail = $_POST['saeadd'];
         $nsacontact = $_POST['sacont'];
         $nsahours = $_POST['sahours'];
+
         $fixedName = mysqli_real_escape_string($MyConnection, $nsname);
-        mysqli_query($MyConnection, "INSERT INTO SA (SA_STUDNUM,SA_LASTNAME,SA_FIRSTNAME, SA_MIDDLE, SA_COURSE, SA_COLLEGE,SA_YEAR,SA_SEX,SA_ADDRESS,SA_EMAIL,SA_CONTACT, SA_HOURS) VALUES ('$nsastudnum', '$nsalastname', '$nsafirstname', '$nsamiddle', '$nsacourse', '$nsacollege', '$nsayear', '$nsasex', '$nsaaddress', '$nsaemail', '$nsacontact', $nsahours);");
+        mysqli_query($MyConnection, "INSERT INTO SA (SA_STUDNUM,SA_LASTNAME,SA_FIRSTNAME, SA_MIDDLE, SA_COURSE, SA_COLLEGE,SA_YEAR,SA_SEX,SA_ADDRESS,SA_EMAIL,SA_CONTACT, SA_HOURS) VALUES ('$nsastudnum', '$nsalastname', '$nsafirstname', '$nsamiddle', '$nsacourse', '$nsacollege', '$nsayear', '$nsasex', '$nsaaddress', '$nsaemail', '$nsacontact', '$nsahours');");
         echo "<script>alert('Added Successfully!');
           location = 'masterlist_sa.php?type=$type';</script>";
     }
