@@ -152,8 +152,8 @@
                       <label for="example-number-input" class="col-2 col-form-label">Payment Mode</label>
                       <div class="col-10 col-md-2">
                         <select name="pay_mode" class = "form-control">
-                          <option value="monthly">Monthly</option>
-                          <option value="drop-in">Drop-in</option>
+                          <option value="Monthly">Monthly</option>
+                          <option value="Drop-in">Drop-in</option>
                         </select>
                       </div>
                       <label for="example-number-input" class="col-2 col-form-label">Amount Paid</label>
@@ -164,12 +164,6 @@
                       <div class="col-10 col-md-2">
                         <input class="form-control" name="date_paid" type = "date"> 
                       </div>
-				</div>
-				<div class="form-group-row">
-					<div class="form-group text-center">
-						<label for="date" class="control-label text-center">Payment Remarks</label><br>
-						<textarea class="form-control" id="exampleTextarea" rows="2" name="remarks" required pattern = "^.{1,200}$" placeholder="200 Characters Only"></textarea>
-					</div>
 				</div>
 			</div>
 			<div class="row py-2">

@@ -87,7 +87,7 @@
       <div class="dropdown-divider"></div>
       <div class="dropdown-divider"></div>
     </div>
-
+  
     <h1 class="jumbotron-fluid text-center py-4" style="font-size: 50px"><em>Student History</em></h1>
     <center><div class="container">
             <center><div class="row">
@@ -148,7 +148,7 @@
                                         echo '<td>'.$MyResults['STUD_FNAME'].'</td>';
                                         echo '<td>'.$MyResults['PAYMENT_MODE'].'</td>';
                                         echo '<td>&#8369;'.$MyResults['AMT_PAID'].'</td>';
-                                        echo '<td>&#8369;'.$MyResults['DATE_PAID'].'</td>';
+                                        echo '<td>'.$MyResults['DATE_PAID'].'</td>';
                                         echo '<td>'.$MyResults['APP_YEAR'].'</td>';
                                     }
                                   }

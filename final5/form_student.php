@@ -323,10 +323,10 @@
 
                               <div class="form-group row">
                                 <label for="example-number-input" class="col-2 col-form-label">Contact</label>
-                                <div class="col-10 col-md-4"> <input class="form-control" name = "sfcontact"> 
+                                <div class="col-10 col-md-4"> <input class="form-control" name = "sfcontact" placeholder="7-Digit Landline/11-Digit Cellular"> 
                                 </div>
                                 <label for="example-number-input" class="col-2 col-form-label">Email</label>
-                                <div class="col-10 col-md-4"> <input class="form-control" name = "sfemail"> 
+                                <div class="col-10 col-md-4"> <input class="form-control" name = "sfemail" placeholder="example@website.com"> 
                                 </div>
                               </div>
 
@@ -373,10 +373,10 @@
 
                               <div class="form-group row">
                                 <label for="example-number-input" class="col-2 col-form-label">Contact</label>
-                                <div class="col-10 col-md-4"> <input class="form-control" name = "smcontact"> 
+                                <div class="col-10 col-md-4"> <input class="form-control" name = "smcontact" placeholder="7-Digit Landline/11-Digit Cellular"> 
                                 </div>
                                 <label for="example-number-input" class="col-2 col-form-label">Email</label>
-                                <div class="col-10 col-md-4"> <input class="form-control" name = "smemail"> 
+                                <div class="col-10 col-md-4"> <input class="form-control" name = "smemail" placeholder="example@website.com"> 
                                 </div>
                               </div>
 
@@ -423,7 +423,7 @@
 
                               <div class="form-group row">
                                 <label for="example-number-input" class="col-2 col-form-label">Contact</label>
-                                <div class="col-10 col-md-4"> <input class="form-control" name = "sgcontact"> 
+                                <div class="col-10 col-md-4"> <input class="form-control" name = "sgcontact" placeholder="7-Digit Landline/11-Digit Cellular"> 
                                 </div>
                                 <label for="example-number-input" class="col-2 col-form-label">Relationship to the Child</label>
                                 <div class="col-10 col-md-4"> <input class="form-control" name = "sgrelation"> 
@@ -509,7 +509,7 @@
                               <div class="col-10 col-md-4"> <input class="form-control" name = "seaddress">
                               </div>
                               <label for="example-number-input" class="col-2 col-form-label">Contact Number</label>
-                              <div class="col-10 col-md-4"> <input class="form-control" name = "secontact">
+                              <div class="col-10 col-md-4"> <input class="form-control" name = "secontact" placeholder="7-Digit Landline/11-Digit Cellular">
                               </div>
                             </div>
 

@@ -15,9 +15,9 @@
 	$output = fopen('php://output', 'w');
 
 	fputcsv($output, array('STUDENT ASSISTANT MASTER LIST'));
-	fputcsv($output, array('Student Number', 'Last Name', 'First Name', 'Course', 'College', 'Year', 'Sex', 'Address', 'Email Address', 'Contact Number', 'Hours Worked'));
+	fputcsv($output, array('Student Number', 'Last Name', 'First Name', 'Middle Initial','Course', 'College', 'Year', 'Sex', 'Address', 'Email Address', 'Contact Number', 'Hours Worked'));
 
-	$query = mysqli_query($conn, "SELECT SA_STUDNUM, SA_LASTNAME, SA_FIRSTNAME, SA_COURSE, SA_COLLEGE, SA_YEAR, SA_SEX, SA_ADDRESS, SA_EMAIL, SA_CONTACT, SA_HOURS FROM SA");
+	$query = mysqli_query($conn, "SELECT SA_STUDNUM, SA_LASTNAME, SA_FIRSTNAME, SA_MIDDLE, SA_COURSE, SA_COLLEGE, SA_YEAR, SA_SEX, SA_ADDRESS, SA_EMAIL, SA_CONTACT, SA_HOURS FROM SA");
 	while($result = mysqli_fetch_assoc($query))
 	{
 		fputcsv($output, $result);
