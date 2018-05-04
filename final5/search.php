@@ -76,7 +76,8 @@
                 </div>
                 <!-- Sex Select -->
                 <!-- Enter Button -->
-                <button type="submit" class="btn btn-primary">Enter</button>
+                </br>
+                <button type="submit" class="btn btn-primary" style ="background-color: #004328">Enter</button>
             </form>
         </div></center>
 
