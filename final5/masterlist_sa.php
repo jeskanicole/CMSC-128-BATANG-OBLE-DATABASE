@@ -109,7 +109,7 @@
                                             <th class = "text-center">Sex</th>
                                             <th class = "text-center">Hours Worked</th>
                                             <th class = "text-center">Edit</th>
-                                            <th class = "text-center">Delete</th>
+                                            
                                         </tr>
                                     </thead>
                                     
@@ -133,8 +133,8 @@
                                                 echo '<td>'.$MyResults['SA_YEAR'].'</td>';
                                                 echo '<td>'.$MyResults['SA_SEX'].'</td>';
                                                 echo '<td>'.$MyResults['SA_HOURS'].'</td>';
-                                                echo '<td><a rel="facebox" href="edit.php?sa='.$Myresults->STUD_NAME.'">Edit</a></td>';
-                                                echo '<td><a rel="facebox" href="delete_sa.php?sanum='.$MyResults['SA_STUDNUM'].'" onClick="return deleteconfig()">Delete</a></td></tr>';
+                                                echo '<td><a rel="facebox" href="edit_sa.php?studnum='.$MyResults['SA_STUDNUM'].'"><i class="fa fa-edit" style="font-size:26px"></i></a></td>';
+                                                //echo '<td><a rel="facebox" href="delete_sa.php?sanum='.$MyResults['SA_STUDNUM'].'" onClick="return deleteconfig()">Delete</a></td></tr>';
 
                                                 
                                             }

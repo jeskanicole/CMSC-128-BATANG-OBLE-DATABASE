@@ -27,6 +27,7 @@
 			$yapp = $MyResults['APP_YR'];
 			$lname = $MyResults['STUD_LASTNAME'];
 			$fname =  $MyResults['STUD_FIRSTNAME'];
+			$midint =  $MyResults['STUD_MIDDLEINT'];
 			$sex = $MyResults['STUD_SEX'];
 			$birthday =$MyResults['STUD_BIRTHDAY'];
 			$age = $MyResults['STUD_AGE'];
@@ -44,12 +45,13 @@
 		$ndate_paid = $_POST['date_paid'];
 		$pay_mode = $_POST['pay_mode'];
 		$remarks = $_POST['remarks'];
+		$or_num = $_POST['or'];
 
 			mysqli_query($MyConnection, "UPDATE STUDENT SET MODE_PAY = $pay_mode where (STUDENT.STUD_LASTNAME = '$lname' AND STUDENT.STUD_FIRSTNAME = '$fname')");
 
 			//mysql_query("UPDATE BAL_HIST SET OUT_BAL = 0 WHERE STUD_NUM = '$num' and LOAN_TYPE = '$type'");
 
-			mysqli_query($MyConnection, "INSERT INTO STUD_HISTORY (STUD_LNAME, STUD_FNAME, PAYMENT_MODE, AMT_PAID, DATE_PAID, APP_YEAR) VALUES ('$lastname', '$firstname', '$pay_mode', '$namt_paid', '$ndate_paid', '$yapp')");
+			mysqli_query($MyConnection, "INSERT INTO STUD_HISTORY (STUD_LNAME, STUD_FNAME, STUD_MIDINT, PAYMENT_MODE, AMT_PAID, DATE_PAID, APP_YEAR, OR_NUM) VALUES ('$lastname', '$firstname', '$midint', '$pay_mode', '$namt_paid', '$ndate_paid', '$yapp', '$or_num')");
 
 
 			echo "<script>alert('Paid Successfully!'); location = 'history.php?lname=$lname&fname=$fname';</script>";
@@ -102,38 +104,6 @@
         </div>
     </section>
 		<!-- Payment Form-->
-		<div class="container">
-			<div class="dropdown-divider"></div>
-			<div class="dropdown-divider"></div>
-		</div>
-		<h2 class="text-center py-2">Student Information</h2>
-		<div class="container">
-			<table class="table-hover table">
-				<thead class="text-center">
-					<tr>
-						<th><center>Last Name</center></th>
-						<th width="300 px"><center>First Name</center></th>
-						<th><center>Sex</center></th>
-						<th width="300 px"><center>Mode of Payment</center></th>
-						<th><center>Application year</center></th>
-					</tr>
-				</thead>
-				<tr class="text-center">
-					<td><?php echo $lname; ?></td>
-					<td><?php echo $fname; ?></td>
-					<td><?php echo $sex; ?></td>
-					<td><?php echo $mode_pay; ?></td>
-					<td><?php echo $yapp; ?></td>
-				</tr>
-			</table>
-		</div>
-
-		<div class="container">
-			<div class="dropdown-divider"></div>
-			<div class="dropdown-divider"></div>
-		</div>
-	</br>
-	</br>
 		<!-- Payment Form -->
 
     <div class="content-wrapper">
@@ -160,9 +130,15 @@
                       <div class="col-10 col-md-2">
                         <input class="form-control" name="amt_paid"> 
                       </div>
+                  </div>
+                  <div class="form-group row">
                       <label for="example-number-input" class="col-2 col-form-label">Date Paid</label>
                       <div class="col-10 col-md-2">
                         <input class="form-control" name="date_paid" type = "date"> 
+                      </div>
+                      <label for="example-number-input" class="col-2 col-form-label">OR Number</label>
+                      <div class="col-10 col-md-2">
+                        <input class="form-control" name="or"> 
                       </div>
 				</div>
 			</div>

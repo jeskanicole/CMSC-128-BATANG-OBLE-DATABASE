@@ -16,7 +16,7 @@
 		STUD_FIRSTNAME VARCHAR(100) NOT NULL,
 		STUD_MIDDLEINT VARCHAR(5),
 		STUD_NICKNAME VARCHAR(100),
-		STUD_BIRTHDAY DATE NOT NULL,
+		STUD_BIRTHDAY DATE,
 		STUD_ADDRESS VARCHAR(150),
 		STUD_AGE VARCHAR(20) NOT NULL,
 		STUD_SEX VARCHAR(10) NOT NULL,
@@ -30,7 +30,7 @@
 		FATHER_AGE VARCHAR(20),
 		FATHER_BIRTHDAY DATE,
 		FATHER_OCCUPATION VARCHAR(50),
-		FATHER_OFFICE VARCHAR(50),
+		FATHER_OFFICE VARCHAR(200),
 		FATHER_CONTACT VARCHAR(11),
 		FATHER_EMAIL VARCHAR(50),
 
@@ -41,7 +41,7 @@
 		MOTHER_AGE VARCHAR(20),
 		MOTHER_BIRTHDAY DATE,
 		MOTHER_OCCUPATION VARCHAR(50),
-		MOTHER_OFFICE VARCHAR(50),
+		MOTHER_OFFICE VARCHAR(200),
 		MOTHER_CONTACT VARCHAR(11),
 		MOTHER_EMAIL VARCHAR(50),
 
@@ -52,17 +52,17 @@
 		GUARDIAN_AGE VARCHAR(20),
 		GUARDIAN_BIRTHDAY DATE,
 		GUARDIAN_OCCUPATION VARCHAR(50),
-		GUARDIAN_OFFICE VARCHAR(50),
+		GUARDIAN_OFFICE VARCHAR(200),
 		GUARDIAN_CONTACT VARCHAR(11),
 		GUARDIAN_RELATION VARCHAR(50),
 
-		MEDICALBG_ONE VARCHAR(200),
-		MEDICALBG_TWO VARCHAR(200),
-		MEDICALBG_THREE VARCHAR(200),
-		MEDICALBG_FOUR VARCHAR(200),
-		MEDICALBG_FIVE VARCHAR(200),
-		MEDICALBG_SIX VARCHAR(200),
-		MEDICALBG_SEVEN VARCHAR(200),
+		MEDICALBG_ONE VARCHAR(1000),
+		MEDICALBG_TWO VARCHAR(1000),
+		MEDICALBG_THREE VARCHAR(1000),
+		MEDICALBG_FOUR VARCHAR(1000),
+		MEDICALBG_FIVE VARCHAR(1000),
+		MEDICALBG_SIX VARCHAR(1000),
+		MEDICALBG_SEVEN VARCHAR(1000),
 
 		EMER_LASTNAME VARCHAR(100) NOT NULL,
 		EMER_FIRSTNAME VARCHAR(100) NOT NULL,
@@ -71,12 +71,32 @@
 		EMER_CONTACT VARCHAR(11) NOT NULL,
 		EMER_RELATION VARCHAR(50) NOT NULL,
 
-		MODE_PAY VARCHAR(20) NOT NULL
+		MODE_PAY VARCHAR(20) NOT NULL,
+		AMT_PAID NUMERIC(8),
+		DATE_PAID DATE,
+		OR_NUM NUMERIC(20)
 
 	)";
 	mysqli_query($conn, $query);
 
-	
+	$query = "INSERT INTO STUDENT VALUES
+		('2015', '2015-04-06', NULL, NULL, 'Anongos', 'Seth Chadlos', 'B', 'Chadlos', NULL, '1A29 BSU Compound, La Trinidad', '4', 'M', '1pm-3pm','Afternoon','Anongos','Samuel', 'F', NULL, '34', '1981-01-24', 'NGO', 'Cordillera Peoples Alliance', '09291477508', NULL,'Anongos', 'Abigail', 'B', NULL, '33', '1981-08-27','NGO','Cordillera Peoples Alliance','09199927369',NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,'Yes. Medication for asthma, as needed, like when there are symptoms of attack or having an attack. (Ex: beta-agonist; lagundi or nebulisation)','Dust and smoke. He also has a coughing fit after strenous physical activity due to his asthma. If this happens we just let him rest first, observe. Di agad nebulise','none observe, so far','Not anymore this year. He doesnt nap in the afternoon anymore (2pm-4pm dati) but goes to bed early at 8pm-8:30pm','Not, so far. Our observation of recent is, madaling mapikon','None', NULL,'Bengwayan','Grace', NULL, 'c/o BSU Administration', '09205417031','Grandmother','Monthly', NULL, NULL, NULL ),
+		 ('2015', '2015-09-04', NULL, NULL, 'Bagsic', 'Denniesse', 'C', 'Niezza', NULL, '329A Pinsao Proper, Tamawan Village, Baguio City 2600', '4', 'f', NULL, NULL, 'Bagsic', 'James Benedict', 'E', NULL, '35', '1975-08-03', 'Administrative staff', 'SPMB, UP Baguio', '09276197136', NULL, 'Bagsic', 'Ofelia', 'C', NULL, '33', '1981-06-27', NULL, NULL, '09063751135', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'None', 'None', 'Yes, cockroaches', 'Yes, 1pm onwards', 'No', 'None', NULL, 'Bagsic', 'James Benedict', 'E', '329A Pinsao Proper, Tamawan Village, Baguio City 2600', '09276137136', 'Father', 'Drop-in', NULL, NULL, NULL);";
+	mysqli_query($conn, $query);
+
+	$query = "CREATE TABLE PAYMENT(
+		APP_YR VARCHAR(4) NOT NULL,
+		DATE_STARTED DATE,
+		STUD_LASTNAME VARCHAR(100) NOT NULL,
+		STUD_FIRSTNAME VARCHAR(100) NOT NULL,
+		STUD_MIDDLEINT VARCHAR(5),
+		STUD_AGE VARCHAR(20) NOT NULL,
+		STUD_SEX VARCHAR(10) NOT NULL,
+		FATHER_TYPE VARCHAR(20),
+		MOTHER_TYPE VARCHAR(20),
+		GUARDIAN_TYPE VARCHAR(20),
+	)";
+	mysqli_query($conn, $query);
 
 
 
@@ -121,11 +141,18 @@
 	$query = "CREATE TABLE STUD_HISTORY(
 		STUD_LNAME VARCHAR(100) NOT NULL,
 		STUD_FNAME VARCHAR(100) NOT NULL,
+		STUD_MIDINT VARCHAR(100) NOT NULL,
 		PAYMENT_MODE VARCHAR(50) NOT NULL,
 		AMT_PAID NUMERIC(8),
 		DATE_PAID DATE,
+		OR_NUM NUMERIC(20),
 		APP_YEAR VARCHAR(10) NOT NULL
 	)";
+	mysqli_query($conn, $query);
+	mysqli_query($conn, $query);
+
+	$query = "INSERT INTO STUD_HISTORY VALUES
+		('Anongos','Seth Chadlos', 'B', 'Monthly',NULL,NULL,NULL,'2015')";
 	mysqli_query($conn, $query);
 
 ?>

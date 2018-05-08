@@ -3,7 +3,7 @@
 require('cellfit.php');
 $d=date('d_m_Y');
 
-	$header=array('Last Name of Student', 'First Name of Student', 'Middle Initial','Sex', 'Birthday', 'Age', 'Dependent of Father', 'Dependent of Mother','Dependent of Guardian', 'Date Started');
+	$header=array('Last Name of Student', 'First Name of Student', 'Sex', 'Birthday', 'Age', 'Last Name of Parent/Guardian', 'First Name of Parent/Guardian', 'Contact Number', 'Type of Parent/Guardian', 'Mode of Payment');
 	//Data loading
 	//*** Load MySQL Data ***//
 	$dbhost = 'localhost';
@@ -13,7 +13,7 @@ $d=date('d_m_Y');
 	$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db_database);
 	$id = $_GET['id'];
 
-	$query = mysqli_query($conn, "SELECT STUD_LASTNAME, STUD_FIRSTNAME, STUD_MIDDLEINT, STUD_SEX, STUD_BIRTHDAY, STUD_AGE, FATHER_TYPE, MOTHER_TYPE, GUARDIAN_TYPE FROM STUDENT");
+	$query = mysqli_query($conn, "SELECT STUD_LASTNAME, STUD_FIRSTNAME, STUD_SEX, STUD_BIRTHDAY, STUD_AGE, PAR_LASTNAME, PAR_FIRSTNAME, PAR_CONTACT, PAR_TYPE, MODE_PAY FROM STUDENT");
 	$resultData = array();
 
 	for ($i=0;$i<mysqli_num_rows($query);$i++)
@@ -54,7 +54,7 @@ $d=date('d_m_Y');
 	//$pdf->BasicTable($header,$resultData);
 	$pdf->SetFillColor(255,255,255);
 	//$this->SetDrawColor(255, 0, 0);
-	$w=array(40,40,15,10,25,10,30,30,30);
+	$w=array(35,35,10,30,10,40,40,24,25,25);
 	
 	//Header
 	$pdf->SetFont('Arial','B',9);
@@ -68,16 +68,17 @@ $d=date('d_m_Y');
 	$pdf->SetFont('Arial','',9);
 	foreach ($resultData as $eachResult) 
 	{
-		$pdf->CellFitScale(40,8,$eachResult['STUD_LASTNAME'],1,0,'C',1);
-		$pdf->CellFitScale(40,8,$eachResult['STUD_FIRSTNAME'],1, 0,'C',1);
-		$pdf->CellFitScale(15,8,$eachResult['STUD_MIDDLEINT'],1, 0,'C',1);
+		$pdf->CellFitScale(35,8,$eachResult['STUD_LASTNAME'],1,0,'C',1);
+		$pdf->CellFitScale(35,8,$eachResult['STUD_FIRSTNAME'],1, 0,'C',1);
 		$pdf->CellFitScale(10,8,$eachResult['STUD_SEX'],1,0,'C',1);
-		$pdf->CellFitScale(25,8,$eachResult['STUD_BIRTHDAY'],1,0,'C',1);
+		$pdf->CellFitScale(30,8,$eachResult['STUD_BIRTHDAY'],1,0,'C',1);
 		$pdf->CellFitScale(10,8,$eachResult['STUD_AGE'],1,0,'C',1);
-		$pdf->CellFitScale(30,8,$eachResult['FATHER_TYPE'],1,0,'C',1);
-		$pdf->CellFitScale(30,8,$eachResult['MOTHER_TYPE'],1,0,'C',1);
-		$pdf->CellFitScale(30,8,$eachResult['GUARDIAN_TYPE'],1,0,'C',1);
-		$pdf->CellFitScale(30,8,$eachResult['DATE_STARTED'],1,0,'C',1);
+		$pdf->CellFitScale(40,8,$eachResult['PAR_LASTNAME'],1,0,'C',1);
+		$pdf->CellFitScale(40,8,$eachResult['PAR_FIRSTNAME'],1,0,'C',1);
+		$pdf->CellFitScale(24,8,$eachResult['PAR_CONTACT'],1,0,'C',1);
+		$pdf->CellFitScale(25,8,$eachResult['PAR_TYPE'],1,0,'C',1);
+		$pdf->CellFitScale(25,8,$eachResult['MODE_PAY'],1,0,'C',1);
+		$pdf->Ln();
 		 	 	 	 	
 	}
 	ob_end_clean();

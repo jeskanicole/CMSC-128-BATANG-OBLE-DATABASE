@@ -3,7 +3,7 @@
 require('cellfit.php');
 $d=date('d_m_Y');
 
-	$header=array('Student Number', 'Last Name', 'First Name', 'Middle', 'Course', 'College', 'Year', 'Sex', 'Address', 'Email Address', 'Contact ', 'Hours Worked');
+	$header=array('Student Number', 'Last Name', 'First Name', 'Course', 'College', 'Year', 'Sex', 'Address', 'Email Address', 'Contact Number', 'Hours Worked');
 	//Data loading
 	//*** Load MySQL Data ***//
 	$dbhost = 'localhost';
@@ -54,7 +54,7 @@ $d=date('d_m_Y');
 	//$pdf->BasicTable($header,$resultData);
 	$pdf->SetFillColor(255,255,255);
 	//$this->SetDrawColor(255, 0, 0);
-	$w=array(25,30,30,10,30,14,13,13,40,35,25, 13);
+	$w=array(28,30,30,33,14,13,13,40,35,25, 20);
 	
 	//Header
 	$pdf->SetFont('Arial','B',9);
@@ -68,18 +68,17 @@ $d=date('d_m_Y');
 	$pdf->SetFont('Arial','',9);
 	foreach ($resultData as $eachResult) 
 	{
-		$pdf->CellFitScale(25	,8,$eachResult['SA_STUDNUM'],1,0,'C',1);
+		$pdf->CellFitScale(28,8,$eachResult['SA_STUDNUM'],1,0,'C',1);
 		$pdf->CellFitScale(30,8,$eachResult['SA_LASTNAME'],1, 0,'C',1);
 		$pdf->CellFitScale(30,8,$eachResult['SA_FIRSTNAME'],1,0,'C',1);
-		$pdf->CellFitScale(10,8,$eachResult['SA_MIDDLE'],1,0,'C',1);
-		$pdf->CellFitScale(30,8,$eachResult['SA_COURSE'],1,0,'C',1);
+		$pdf->CellFitScale(33,8,$eachResult['SA_COURSE'],1,0,'C',1);
 		$pdf->CellFitScale(14,8,$eachResult['SA_COLLEGE'],1,0,'C',1);
 		$pdf->CellFitScale(13,8,$eachResult['SA_YEAR'],1,0,'C',1);
 		$pdf->CellFitScale(13,8,$eachResult['SA_SEX'],1,0,'C',1);
 		$pdf->CellFitScale(40,8,$eachResult['SA_ADDRESS'],1,0,'C',1);
 		$pdf->CellFitScale(35,8,$eachResult['SA_EMAIL'],1,0,'C',1);
 		$pdf->CellFitScale(25,8,$eachResult['SA_CONTACT'],1,0,'C',1);
-		$pdf->CellFitScale(13,8,$eachResult['SA_HOURS'],1,0,'C',1);
+		$pdf->CellFitScale(20,8,$eachResult['SA_HOURS'],1,0,'C',1);
 		$pdf->Ln();
 		 	 	 	 	
 	}

@@ -63,7 +63,7 @@
 
         $nsmedicalbgone = $_POST['smedicalbgone'];
         $nsmedicalbgtwo = $_POST['smedicalbgtwo'];
-        $nsmedicalbgthree = $_POST['smedicalbthree'];
+        $nsmedicalbgthree = $_POST['smedicalbgthree'];
         $nsmedicalbgfour = $_POST['smedicalbgfour'];
         $nsmedicalbgfive = $_POST['smedicalbgfive'];
         $nsmedicalbgsix = $_POST['smedicalbgsix'];
@@ -72,7 +72,6 @@
         $nselastname = $_POST['selastname'];
         $nsefirstname = $_POST['sefirstname'];
         $nsemiddleint = $_POST['semiddleint'];
-        $nsage = $_POST['sage'];
         $nseaddress = $_POST['seaddress'];
         $nsecontact = $_POST['secontact'];
         $nserelation = $_POST['serelation'];
@@ -80,22 +79,15 @@
         $nspaymode = $_POST['spaymode'];
         $amntpaid = $_POST['apaid'];
         $datepaid= $_POST['dpaid'];
+        $or = $_POST['ornum'];
         
         
 
         
-        mysqli_query($MyConnection, "INSERT INTO STUDENT (APP_YR, DATE_STARTED, STUD_SEMESTER, STUD_ACADYEAR, STUD_LASTNAME, STUD_FIRSTNAME, STUD_MIDDLEINT, STUD_NICKNAME, STUD_BIRTHDAY, STUD_ADDRESS, STUD_AGE, STUD_SEX, STUD_SCHEDTIME, STUD_SCHEDDAY, FATHER_LASTNAME, FATHER_FIRSTNAME, FATHER_MIDDLEINT, FATHER_TYPE, FATHER_AGE, FATHER_BIRTHDAY, FATHER_OCCUPATION, FATHER_OFFICE, FATHER_CONTACT, FATHER_EMAIL, MOTHER_LASTNAME, MOTHER_FIRSTNAME, MOTHER_MIDDLEINT, MOTHER_TYPE, MOTHER_AGE, MOTHER_BIRTHDAY, MOTHER_OCCUPATION, MOTHER_OFFICE, MOTHER_CONTACT, MOTHER_EMAIL, GUARDIAN_LASTNAME, GUARDIAN_FIRSTNAME, GUARDIAN_MIDDLEINT, GUARDIAN_TYPE, GUARDIAN_AGE, GUARDIAN_BIRTHDAY, GUARDIAN_OCCUPATION, GUARDIAN_OFFICE, GUARDIAN_CONTACT, GUARDIAN_RELATION, MEDICALBG_ONE, MEDICALBG_TWO, MEDICALBG_THREE, MEDICALBG_FOUR, MEDICALBG_FIVE, MEDICALBG_SIX, MEDICALBG_SEVEN, EMER_LASTNAME, EMER_FIRSTNAME, EMER_MIDDLEINT, EMER_ADDRESS, EMER_CONTACT, EMER_RELATION, MODE_PAY) VALUES ('$nsappyr', '$nsdatestarted', '$nssemester', '$nsacadyear', '$nslastname', '$nsfirstname', '$nsmiddleint', '$nsnickname', '$nsbirthday', '$nsaddress', '$nsage', '$nssex', '$nsschedtime', '$nsschedday', '$nsflastname', '$nsffirstname', '$nsfmiddleint', '$nsftype', '$nsfage', '$nsfbirthday', '$nsfoccupation', '$nsfoffice', '$nsfcontact', '$nsfemail', '$nsmlastname', '$nsmfirstname', '$nsmmiddleint', '$nsmtype', '$nsmage', '$nsmbirthday', '$nsmoccupation', '$nsmoffice', '$nsmcontact', '$nsmemail', '$nsglastname', '$nsgfirstname', '$nsgmiddleint', '$nsgtype', '$nsgage', '$nsgbirthday', '$nsgoccupation', '$nsgoffice', '$nsgcontact', '$nsgrelation', '$nsmedicalbgone', '$nsmedicalbgtwo', '$nsmedicalbgthree', '$nsmedicalbgfour', '$nsmedicalbgfive', '$nsmedicalbgsix', '$nsmedicalbgseven','$nselastname', '$nsefirstname', '$nsemiddleint', '$nseaddress', '$nsecontact', '$nserelation', '$nspaymode');");
-
-
-          mysqli_query($MyConnection, "INSERT INTO STUD_HISTORY (STUD_LNAME,STUD_FNAME,PAYMENT_MODE,  AMT_PAID, DATE_PAID, APP_YEAR) VALUES ('$studlastname', '$studfirstname', '$paymode', '$amntpaid', '$datepaid', '$yearapp');");
-          echo "<script>alert('Added Successfully!');
+        mysqli_query($MyConnection, "INSERT INTO STUDENT (APP_YR, DATE_STARTED, STUD_SEMESTER, STUD_ACADYEAR, STUD_LASTNAME, STUD_FIRSTNAME, STUD_MIDDLEINT, STUD_NICKNAME, STUD_BIRTHDAY, STUD_ADDRESS, STUD_AGE, STUD_SEX, STUD_SCHEDTIME, STUD_SCHEDDAY, FATHER_LASTNAME, FATHER_FIRSTNAME, FATHER_MIDDLEINT, FATHER_TYPE, FATHER_AGE, FATHER_BIRTHDAY, FATHER_OCCUPATION, FATHER_OFFICE, FATHER_CONTACT, FATHER_EMAIL, MOTHER_LASTNAME, MOTHER_FIRSTNAME, MOTHER_MIDDLEINT, MOTHER_TYPE, MOTHER_AGE, MOTHER_BIRTHDAY, MOTHER_OCCUPATION, MOTHER_OFFICE, MOTHER_CONTACT, MOTHER_EMAIL, GUARDIAN_LASTNAME, GUARDIAN_FIRSTNAME, GUARDIAN_MIDDLEINT, GUARDIAN_TYPE, GUARDIAN_AGE, GUARDIAN_BIRTHDAY, GUARDIAN_OCCUPATION, GUARDIAN_OFFICE, GUARDIAN_CONTACT, GUARDIAN_RELATION, MEDICALBG_ONE, MEDICALBG_TWO, MEDICALBG_THREE, MEDICALBG_FOUR, MEDICALBG_FIVE, MEDICALBG_SIX, MEDICALBG_SEVEN, EMER_LASTNAME, EMER_FIRSTNAME, EMER_MIDDLEINT, EMER_ADDRESS, EMER_CONTACT, EMER_RELATION, MODE_PAY, AMT_PAID, DATE_PAID) VALUES ('$nsappyr', '$nsdatestarted', '$nssemester', '$nsacadyear', '$nslastname', '$nsfirstname', '$nsmiddleint', '$nsnickname', '$nsbirthday', '$nsaddress', '$nsage', '$nssex', '$nsschedtime', '$nsschedday', '$nsflastname', '$nsffirstname', '$nsfmiddleint', '$nsftype', '$nsfage', '$nsfbirthday', '$nsfoccupation', '$nsfoffice', '$nsfcontact', '$nsfemail', '$nsmlastname', '$nsmfirstname', '$nsmmiddleint', '$nsmtype', '$nsmage', '$nsmbirthday', '$nsmoccupation', '$nsmoffice', '$nsmcontact', '$nsmemail', '$nsglastname', '$nsgfirstname', '$nsgmiddleint', '$nsgtype', '$nsgage', '$nsgbirthday', '$nsgoccupation', '$nsgoffice', '$nsgcontact', '$nsgrelation', '$nsmedicalbgone', '$nsmedicalbgtwo', '$nsmedicalbgthree', '$nsmedicalbgfour', '$nsmedicalbgfive', '$nsmedicalbgsix', '$nsmedicalbgseven','$nselastname', '$nsefirstname', '$nsemiddleint', '$nseaddress', '$nsecontact', '$nserelation', '$nspaymode', '$amntpaid', '$datepaid');");
+        mysqli_query($MyConnection, "INSERT INTO STUD_HISTORY (STUD_LNAME, STUD_FNAME, STUD_MIDINT, PAYMENT_MODE, AMT_PAID, DATE_PAID, APP_YEAR, OR_NUM) VALUES ('$nslastname', '$nsfirstname', '$nsmiddleint', '$nspaymode', '$amntpaid', '$datepaid', '$nsappyr', '$or');");
+        echo "<script>alert('Added Successfully!');
             location = 'masterlist_student.php';</script>";
-
-          echo "<script>alert('Added Successfully!');
-            location = 'masterlist_student.php';</script>";
-
-
-
     }
 ?>
 <!DOCTYPE html>
@@ -323,10 +315,10 @@
 
                               <div class="form-group row">
                                 <label for="example-number-input" class="col-2 col-form-label">Contact</label>
-                                <div class="col-10 col-md-4"> <input class="form-control" name = "sfcontact" placeholder="7-Digit Landline/11-Digit Cellular"> 
+                                <div class="col-10 col-md-4"> <input class="form-control" name = "sfcontact"> 
                                 </div>
                                 <label for="example-number-input" class="col-2 col-form-label">Email</label>
-                                <div class="col-10 col-md-4"> <input class="form-control" name = "sfemail" placeholder="example@website.com"> 
+                                <div class="col-10 col-md-4"> <input class="form-control" name = "sfemail"> 
                                 </div>
                               </div>
 
@@ -373,10 +365,10 @@
 
                               <div class="form-group row">
                                 <label for="example-number-input" class="col-2 col-form-label">Contact</label>
-                                <div class="col-10 col-md-4"> <input class="form-control" name = "smcontact" placeholder="7-Digit Landline/11-Digit Cellular"> 
+                                <div class="col-10 col-md-4"> <input class="form-control" name = "smcontact"> 
                                 </div>
                                 <label for="example-number-input" class="col-2 col-form-label">Email</label>
-                                <div class="col-10 col-md-4"> <input class="form-control" name = "smemail" placeholder="example@website.com"> 
+                                <div class="col-10 col-md-4"> <input class="form-control" name = "smemail"> 
                                 </div>
                               </div>
 
@@ -423,7 +415,7 @@
 
                               <div class="form-group row">
                                 <label for="example-number-input" class="col-2 col-form-label">Contact</label>
-                                <div class="col-10 col-md-4"> <input class="form-control" name = "sgcontact" placeholder="7-Digit Landline/11-Digit Cellular"> 
+                                <div class="col-10 col-md-4"> <input class="form-control" name = "sgcontact"> 
                                 </div>
                                 <label for="example-number-input" class="col-2 col-form-label">Relationship to the Child</label>
                                 <div class="col-10 col-md-4"> <input class="form-control" name = "sgrelation"> 
@@ -509,7 +501,7 @@
                               <div class="col-10 col-md-4"> <input class="form-control" name = "seaddress">
                               </div>
                               <label for="example-number-input" class="col-2 col-form-label">Contact Number</label>
-                              <div class="col-10 col-md-4"> <input class="form-control" name = "secontact" placeholder="7-Digit Landline/11-Digit Cellular">
+                              <div class="col-10 col-md-4"> <input class="form-control" name = "secontact">
                               </div>
                             </div>
 
@@ -523,22 +515,28 @@
                             <p class="indent"></p> <h3><b>PAYMENT DETAILS</b></h3>
                             <br>
                             <div class="form-group row">
-                                  <label for="example-number-input" class="col-2 col-form-label">Payment Mode</label>
+                                  <label for="example-number-input" class="col-3 col-form-label">Payment Mode</label>
                                   <div class="col-10 col-md-2">
                                     <select name="spaymode" class = "form-control">
                                       <option value="Monthly">Monthly</option>
                                       <option value="Drop-in">Drop-in</option>
                                     </select>
                                   </div>
-                                  <label for="example-number-input" class="col-2 col-form-label">Amount Paid</label>
+                                  <label for="example-number-input" class="col-3 col-form-label">Amount Paid</label>
                                   <div class="col-10 col-md-2">
                                     <input class="form-control" name="apaid"> 
                                   </div>
-                                  <label for="example-number-input" class="col-2 col-form-label">Date Paid</label>
+                            </div>
+                            <div class="form-group row">
+                                  <label for="example-number-input" class="col-3 col-form-label">Date Paid</label>
                                   <div class="col-10 col-md-2">
                                     <input class="form-control" name="dpaid" type = "date"> 
                                   </div>
-                                </div>
+                                  <label for="example-number-input" class="col-3 col-form-label">OR Number</label>
+                                  <div class="col-10 col-md-2">
+                                    <input class="form-control" name="ornum"> 
+                                  </div>
+                            </div>
 
                           </div>
                         </div>

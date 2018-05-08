@@ -110,13 +110,8 @@
                                             <th class = "text-center">Dependent of (Mother)</th>
                                             <th class = "text-center">Dependent of (Guardian)</th>
                                             <th class = "text-center">Date Started</th>
-
-
-
                                             <th class = "text-center">Pay</th>
                                             <th class = "text-center">Edit</th>
-                                            
-
                                         </tr>
                                     </thead>
                                     

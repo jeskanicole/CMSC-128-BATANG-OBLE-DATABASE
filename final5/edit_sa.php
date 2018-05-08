@@ -24,13 +24,11 @@
 
 
 
-    $sastudnum = $_GET['sastudnum'];
-
-    $salastname = $_GET['salastname'];
+    $sastudnum = $_GET['studnum'];
 
 
 
-    $MySearchQuery = "SELECT * FROM SA WHERE (SA.SA_STUDNUM = '$sastudnum' AND SA.SA_LASTNAME = '$salastname');";
+    $MySearchQuery = "SELECT * FROM SA WHERE (SA.SA_STUDNUM = '$sastudnum');";
 
     $MyValues = $MyConnection -> query($MySearchQuery);
 
@@ -43,6 +41,8 @@
       $salastname = $MyResults['SA_LASTNAME'];
 
       $safirstname = $MyResults['SA_FIRSTNAME'];
+
+      $samiddle = $MyResults['SA_MIDDLE'];
 
       $sastudnum = $MyResults['SA_STUDNUM']; 
 
@@ -60,6 +60,8 @@
 
       $sacontact = $MyResults['SA_CONTACT'];
 
+      $sahours = $MyResults['SA_HOURS'];
+
      }
 
     }
@@ -68,33 +70,33 @@
 
     if($_POST['save']){
 
-        $nsalastname = $_POST['salastname'];
+        $nsalastname = $_POST['salname'];
 
-        $nsafirstname = $_POST['safirstname'];
+        $nsafirstname = $_POST['safname'];
 
-        $nsastudnum  = $_POST['sastudnum'];
+        $nsamiddle = $_POST['samiddle'];
 
-        $nsacourse = $_POST['sacourse'];
+        $nsastudnum  = $_POST['sasnum'];
 
-        $nsacollege = $_POST['sacollege'];
+        $nsacourse = $_POST['sacse'];
 
-        $nsayear = $_POST['sayear'];
+        $nsacollege = $_POST['sacege'];
+
+        $nsayear = $_POST['sayr'];
 
         $nsasex = $_POST['sasex'];
 
-        $nsaaddress = $_POST['saaddress'];
+        $nsaaddress = $_POST['saadd'];
 
-        $nsaemail = $_POST['saemail'];
+        $nsaemail = $_POST['saeadd'];
 
-        $nsacontact = $_POST['sacontact'];
+        $nsacontact = $_POST['sacont'];
 
-
-
-        $MyQuery = "UPDATE SA SET SA_LASTNAME ='$nsalastname', SA_FIRSTNAME = '$nsafirstname', SA_STUDNUM = '$nsastudnum', SA_COURSE = '$nsacourse', SA_COLLEGE = '$nsacollege', SA_YEAR = '$nsayear', SA_SEX = '$nsasex', SA_ADDRESS = '$nsaaddress', SA_EMAIL = '$nsaemail', SA_CONTACT = '$nsacontact' WHERE (SA.SA_STUDNUM = '$sastudnum' AND SA.SA_LASTNAME = '$salastname');";
-
-        mysqli_query($MyConnection, $MyQuery);
+        $nsahours = $_POST['sahrs'];
 
 
+
+        mysqli_query($MyConnection,"UPDATE SA SET SA_LASTNAME ='$nsalastname', SA_FIRSTNAME = '$nsafirstname', SA_MIDDLE = '$nsamiddle', SA_STUDNUM = '$nsastudnum', SA_COURSE = '$nsacourse', SA_COLLEGE = '$nsacollege', SA_YEAR = '$nsayear', SA_SEX = '$nsasex', SA_ADDRESS = '$nsaaddress', SA_EMAIL = '$nsaemail', SA_CONTACT = '$nsacontact' , SA_HOURS = '$nsahours';");
 
         echo "<script>alert('Added Successfully!');
 
@@ -233,141 +235,85 @@
                         </div>
 
                         <div class="panel-body">
-
                             <form class="form-signin" name="myForm" method="POST" enctype="multipart/form-data" name="addroom" onsubmit="return validateForm()">
-
                                 <div class="form-group row">
-
                                   <div class="container">
-
-                                    <div class="form-group row">
-
-                                      <label for="example-number-input" class="col-2 col-form-label">Student Name</label>
-
-                                      <div class="col-10 col-md-5"> <input class="form-control" name = "salastname" placeholder = "Last Name"> 
-
+                                      <div class="form-group row">
+                                        <label for="example-number-input" class="col-2 col-form-label">Student Name</label>
+                                        <div class="col-10 col-md-4"> 
+                                          <input class="form-control" name = "salname" value = "<?php echo $salastname; ?>"> 
+                                        </div>
+                                        <div class="col-10 col-md-4"> 
+                                          <input class="form-control" name = "safname" value = "<?php echo $safirstname; ?>"> 
+                                        </div>
+                                        <div class="col-10 col-md-2"> 
+                                          <input class="form-control" name = "samiddle" value = "<?php echo $samiddle; ?>"> 
+                                        </div>
+                                      </div>
+                                      <div class="form-group row">
+                                        <label for="example-number-input" class="col-2 col-form-label">Student Number</label>
+                                          <div class="col">
+                                            <input class="form-control" name="sasnum" value = "<?php echo $sastudnum; ?>">
+                                          </div>
+                                        <label for="example-number-input" class="col-2 col-form-label">Course</label>
+                                          <div class="col-10 col-md-6">
+                                            <input class="form-control" name="sacse"  value = "<?php echo $sacourse; ?>">
+                                          </div>
+                                      </div>
+                                      <div class="form-group row">
+                                        <label for="example-number-input" class="col-2 col-form-label">College</label>
+                                          <div class="col">
+                                            <select name="sacege" class="form-control">
+                                              <option <?php if ($sacollege == "CAC") echo 'selected' ; ?> value="CAC">CAC</option>
+                                              <option <?php if ($sacollege == "CS") echo 'selected' ; ?> value="CS">CS</option>
+                                              <option <?php if ($sacollege == "CSS") echo 'selected' ; ?> value="CSS">CSS</option>
+                                            </select>
+                                          </div>
+                                          <label for="example-number-input" class="col-form-label">Year</label>
+                                            <div class="col">
+                                              <select name="sayr" class = "form-control">
+                                                <option <?php if ($sayear == "1st Year") echo 'selected' ; ?> value = "1ST">1st Year</option>
+                                                <option <?php if ($sayear == "2nd Year") echo 'selected' ; ?> value = "2ND">2nd Year</option>
+                                                <option <?php if ($sayear == "3rd Year") echo 'selected' ; ?> value = "3RD">3rd Year</option>
+                                                <option <?php if ($sayear == "4th Year") echo 'selected' ; ?> value = "4TH">4th Year</option>
+                                                <option <?php if ($sayear == "OTHERS") echo 'selected' ; ?> value = "OTHERS">Others</option>
+                                              </select>
+                                            </div>
+                                          <label for="example-number-input" class="col-2 col-form-label">Sex</label>
+                                            <div class="col">
+                                              <select name="sasex" class = "form-control">
+                                                <option <?php if ($sasex == "Female") echo 'selected' ; ?> value="Female">Female</option>
+                                                <option <?php if ($sasex == "Male") echo 'selected' ; ?> value="Male">Male</option>
+                                              </select>
+                                            </div>
+                                      </div>
+                                      <div class="form-group row">
+                                        <label for="example-number-input" class="col-2 col-form-label">Permanent Address</label>
+                                          <div class="col">
+                                          <input class="form-control" name="saadd" value = "<?php echo $saaddress; ?>">
+                                          </div>
+                                      </div>
+                                      <div class="form-group row">
+                                          <label for="example-number-input" class="col-2 col-form-label">E-mail Address</label>
+                                                <div class="col">
+                                                    <input class="form-control" type="email" id="email-input" name="saeadd" value = "<?php echo $saemail; ?>">
+                                                </div>
+                                          <label for="example-number-input" class="col-2 col-form-label">Contact Number</label>
+                                            <div class="col">
+                                              <input class="form-control" name="sacont" value = "<?php echo $sacontact; ?>">
+                                            </div>
                                       </div>
 
-                                      <div class="col-10 col-md-5"> <input class="form-control" name = "safirstname" placeholder = "First Name"> 
-
+                                      <div class="form-group row">
+                                        <label for="example-number-input" class="col-2 col-form-label">Hours Worked</label>
+                                          <div class="col">
+                                          <input class="form-control" name="sahrs" value = "<?php echo $sahours; ?>">
+                                          </div>
                                       </div>
-
-                                    </div>
-
-                                    <div class="form-group row">
-
-                                      <label for="example-number-input" class="col-2 col-form-label">Student Number</label>
-
-                                        <div class="col">
-
-                                          <input class="form-control" name="sastudnum" required pattern ="\d{4}[-]\d{5}" placeholder="XXXX-XXXXX">
-
-                                        </div>
-
-                                      <label for="example-number-input" class="col-2 col-form-label">Course</label>
-
-                                        <div class="col-10 col-md-6">
-
-                                          <input class="form-control" name="sacourse" required placeholder="Undergraduate Degree/Graduate Degree" pattern="^.{1,35}$">
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="form-group row">
-
-                                      <label for="example-number-input" class="col-2 col-form-label">College</label>
-
-                                        <div class="col">
-
-                                          <select name="sacollege" class="form-control">
-
-                                            <option value="CAC">CAC</option>
-
-                                            <option value="CS">CS</option>
-
-                                            <option value="CSS">CSS</option>
-
-                                          </select>
-
-                                        </div>
-
-                                        <label for="example-number-input" class="col-form-label">Year</label>
-
-                                          <div class="col">
-
-                                            <select name="sayear" class = "form-control">
-
-                                              <option value = "1ST">1st Year</option>
-
-                                              <option value = "2ND">2nd Year</option>
-
-                                              <option value = "3RD">3rd Year</option>
-
-                                              <option value = "4TH">4th Year</option>
-
-                                              <option value = "OTHERS">Others</option>
-
-                                            </select>
-
-                                          </div>
-
-                                        <label for="example-number-input" class="col-2 col-form-label">Sex</label>
-
-                                          <div class="col">
-
-                                            <select name="sasex" class = "form-control">
-
-                                              <option value="female">Female</option>
-
-                                              <option value="male">Male</option>
-
-                                            </select>
-
-                                          </div>
-
-                                    </div>
-
-                                    <div class="form-group row">
-
-                                      <label for="example-number-input" class="col-2 col-form-label">Permanent Address</label>
-
-                                        <div class="col">
-
-                                        <input class="form-control" name="saaddress" required placeholder="Complete Address" pattern="^.{1,200}$">
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="form-group row">
-
-                                        <label for="example-number-input" class="col-2 col-form-label">E-mail Address</label>
-
-                                              <div class="col">
-
-                                                  <input class="form-control" type="email" id="email-input" name="saemail" placeholder="example@website.com">
-
-                                              </div>
-
-                                        <label for="example-number-input" class="col-2 col-form-label">Contact Number</label>
-
-                                          <div class="col">
-
-                                            <input class="form-control" name="sacontact" required pattern = "^(0\d{10})$|^(\d{7})$" placeholder="7-Digit Landline/11-Digit Cellular">
-
-                                          </div>
-
-                                    </div>
-
-                              </br>
-
-                              </br>
-
+                                  </div>
+                                </div>
                                 <center><button class="btn" type="submit" name="save" value="save" id="button1" style="background-color: #C0C0C0; width: 150px; height: 60px; padding: 5px"><span>Save</span></button></center>
-
                             </form>
-
                         </div>
 
                     </div>

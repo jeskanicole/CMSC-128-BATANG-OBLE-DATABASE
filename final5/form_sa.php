@@ -44,7 +44,7 @@
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-    <title>ADD STUDENT ASSISTANT</title>
+    <title>ADD STUDENT</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
@@ -98,7 +98,7 @@
                 <div class="col-md-12 col-sm-0 col-xs-0">
                    <div class="panel panel-info">
                         <div class="panel-heading">
-                           Batang Oble Day Care Center Application Form <b>(STUDENT ASSISTANT)</b>
+                           Batang Oble Day Care Center Application Form <b>(STUDENTS)</b>
                         </div>
                         <div class="panel-body">
                             <form class="form-signin" name="myForm" method="POST" enctype="multipart/form-data" name="addroom" onsubmit="return validateForm()">
@@ -147,7 +147,7 @@
                                             </div>
                                           <label for="example-number-input" class="col-2 col-form-label">Sex</label>
                                             <div class="col">
-                                              <select name="sasx" class = "form-control">
+                                              <select name="sasex" class = "form-control">
                                                 <option value="Female">Female</option>
                                                 <option value="Male">Male</option>
                                               </select>

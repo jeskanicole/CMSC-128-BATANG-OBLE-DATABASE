@@ -93,37 +93,39 @@
 		              	 <thead>
 			                <tr class = text-center>
 			                	<th>Application Year</th>
-			                	<th>Last Name</th>
-			                	<th>First Name</th>
+                                <th>Last Name</th>
+                                <th>First Name</th>
+                                <th>Middle Initial</th>
                                 <th>Sex</th>
-                                <th>Birthday</th>
                                 <th>Age</th>
-                                <th>Parent Last Name</th>
-                                <th>Parent First Name</th>
-                                <th>Contact Number</th>
-                                <th>Parent/Guardian Type</th>
-                                <th>Mode of Payment</th>
+                                <th>Dependent of (Father)</th>
+                                <th>Dependent of (Mother)</th>
+                                <th>Dependent of (Guardian)</th>
+                                <th>Date Started</th>
+                                <th>Pay</th>
                                 <th>Edit</th>
-                                <th>Delete</th>
 			                </tr>
 		                </thead>
 		    			";
 		                while ($MyResults = $MyValues -> fetch_assoc())
 		                {
-							echo '<tr class = text-center>';
-							echo '<td> '.$MyResults['APP_YR'].' </td>';
-							echo '<td> '.$MyResults['STUD_LASTNAME'].' </td>';
-							echo '<td> '.$MyResults['STUD_FIRSTNAME'].' </td>';
-							echo '<td> '.$MyResults['STUD_SEX'].' </td>';
-							echo '<td> '.$MyResults['STUD_BIRTHDAY'].' </td>';
-							echo '<td> '.$MyResults['STUD_AGE'].' </td>';
-							echo '<td> '.$MyResults['PAR_LASTNAME'].' </td>';
-							echo '<td> '.$MyResults['PAR_FIRSTNAME'].' </td>';
-							echo '<td> '.$MyResults['PAR_CONTACT'].' </td>';
-							echo '<td> '.$MyResults['PAR_TYPE'].' </td>';
-							echo '<td> '.$MyResults['MODE_PAY'].' </td>';
-							echo '<td><a rel="facebox" href="edit_trans.php?num='.$MyResults['STUD_NAME'].'">Edit</a></td>';
-							echo '<td><a rel="facebox" href="delete_student.php?lastname='.$MyResults['STUD_LASTNAME'].'&firstname='.$MyResults['STUD_FIRSTNAME'].'" onClick="return deleteconfig()">Delete</a></td></tr>';
+							echo '<tr>';
+
+                            echo '<td>'.$MyResults['APP_YR'].'</a></td>';
+                            echo '<td><a rel="facebox" href="history.php?lname='.$MyResults['STUD_LASTNAME'].'&fname='.$MyResults['STUD_FIRSTNAME'].'">'.$MyResults['STUD_LASTNAME'].'</a></td>'; //here
+                            echo '<td>'.$MyResults['STUD_FIRSTNAME'].'</a></td>';
+                            echo '<td>'.$MyResults['STUD_MIDDLEINT'].'</a></td>';
+                            echo '<td>'.$MyResults['STUD_SEX'].'</td>';
+                            echo '<td>'.$MyResults['STUD_AGE'].'</td>';
+                            echo '<td>'.$MyResults['FATHER_TYPE'].'</td>';
+                            echo '<td>'.$MyResults['MOTHER_TYPE'].'</td>';
+                            echo '<td>'.$MyResults['GUARDIAN_TYPE'].'</td>';
+                            echo '<td>'.$MyResults['DATE_STARTED'].'</a></td>';
+                        
+                           // echo '<td>'.$MyResults['MODE_PAY'].'</td>';
+                            
+                            echo '<td><a rel="facebox" href="payment_student.php?lastname='.$MyResults['STUD_LASTNAME'].'&firstname='.$MyResults['STUD_FIRSTNAME'].' &date_add='.$Myresults['DATE_ADDED'].'"><i class="fa fa-money" style="font-size:26px"></i></a></td>'; //here
+                            echo '<td><a rel="facebox" href="edit_student.php?lastname='.$MyResults['STUD_LASTNAME'].'&firstname='.$MyResults['STUD_FIRSTNAME'].'"><i class="fa fa-edit" style="font-size:26px"></i></a></td>'; //here                                                
 		                }
 	                	echo "</table>";
 	                	echo "</div> </div> </div>";
@@ -159,6 +161,8 @@
 
                                             <th class = text-center>First Name</th>
 
+                                            <th class = text-center>Middle Initial</th>
+
                                             <th class = text-center>Course</th>
 
                                             <th class = text-center>College</th>
@@ -173,9 +177,11 @@
 
                                             <th class = text-center>Contact Number</th>
 
+                                            <th class = text-center>Hours Work</th>
+
                                             <th class = text-center>Edit</th>
 
-                                            <th class = text-center>Delete</th>
+                                            
 
                                         </tr>
 		                </thead>
@@ -189,6 +195,8 @@
                             echo '<td>'.$MyResults['SA_LASTNAME'].'</a></td>';
 
                             echo '<td>'.$MyResults['SA_FIRSTNAME'].'</a></td>';
+
+                            echo '<td>'.$MyResults['SA_MIDDLE'].'</a></td>';
 
                             echo '<td>'.$MyResults['SA_COURSE'].'</td>';
 
@@ -204,9 +212,11 @@
 
                             echo '<td>'.$MyResults['SA_CONTACT'].'</td>';
 
+                            echo '<td>'.$MyResults['SA_HOURS'].'</a></td>';
+
                             echo '<td><a rel="facebox" href="edit.php?sa='.$Myresults->STUD_NAME.'">Edit</a></td>';
 
-                            echo '<td><a rel="facebox" href="delete_sa.php?sanum='.$MyResults['SA_STUDNUM'].'" onClick="return deleteconfig()">Delete</a></td></tr>';
+                            //echo '<td><a rel="facebox" href="delete_sa.php?sanum='.$MyResults['SA_STUDNUM'].'" onClick="return deleteconfig()">Delete</a></td></tr>';
 		                }
 
 	                	echo "</table>";
@@ -237,42 +247,42 @@
 		              	 <thead>
 			                <tr class = text-center>
 			                	<th>Application Year</th>
-			                	<th>Last Name</th>
-			                	<th>First Name</th>
+                                <th>Last Name</th>
+                                <th>First Name</th>
+                                <th>Middle Initial</th>
                                 <th>Sex</th>
-                                <th>Birthday</th>
                                 <th>Age</th>
-                                <th>Parent LastName</th>
-                                <th>Parent FirstName</th>
-                                <th>Contact Number</th>
-                                <th>Parent/Guardian Type</th>
-                                <th>Mode of Payment</th>
+                                <th>Dependent of (Father)</th>
+                                <th>Dependent of (Mother)</th>
+                                <th>Dependent of (Guardian)</th>
+                                <th>Date Started</th>
+                                <th>Pay</th>
                                 <th>Edit</th>
-                                <th>Delete</th>
 			                </tr>
 		                </thead>
-	        			";
-
+		    			";
 		                while ($MyResults = $MyValues -> fetch_assoc())
 		                {
-	                		echo '<tr>';
-	                		echo '<td> '.$MyResults['APP_YR'].' </td>';
-							echo '<td> '.$MyResults['STUD_LASTNAME'].' </td>';
-							echo '<td> '.$MyResults['STUD_FIRSTNAME'].' </td>';
-							echo '<td> '.$MyResults['STUD_SEX'].' </td>';
-							echo '<td> '.$MyResults['STUD_BIRTHDAY'].' </td>';
-							echo '<td> '.$MyResults['STUD_AGE'].' </td>';
-							echo '<td> '.$MyResults['PAR_LASTNAME'].' </td>';
-							echo '<td> '.$MyResults['PAR_FIRSTNAME'].' </td>';
-							echo '<td> '.$MyResults['PAR_CONTACT'].' </td>';
-							echo '<td> '.$MyResults['PAR_TYPE'].' </td>';
-							echo '<td> '.$MyResults['MODE_PAY'].' </td>';
-							echo '<td><a rel="facebox" href="edit_trans.php?num='.$MyResults['STUD_NAME'].'">Edit</a></td>';
-							echo '<td><a rel="facebox" href="delete.php?num='.$MyResults['STUD_NAME'].'" onClick="return deleteconfig()">Delete</a></td></tr>';
-		                }
+							echo '<tr>';
 
-		                echo "</table>";
-		               	echo "</div> </div> </div>";
+                            echo '<td>'.$MyResults['APP_YR'].'</a></td>';
+                            echo '<td><a rel="facebox" href="history.php?lname='.$MyResults['STUD_LASTNAME'].'&fname='.$MyResults['STUD_FIRSTNAME'].'">'.$MyResults['STUD_LASTNAME'].'</a></td>'; //here
+                            echo '<td>'.$MyResults['STUD_FIRSTNAME'].'</a></td>';
+                            echo '<td>'.$MyResults['STUD_MIDDLEINT'].'</a></td>';
+                            echo '<td>'.$MyResults['STUD_SEX'].'</td>';
+                            echo '<td>'.$MyResults['STUD_AGE'].'</td>';
+                            echo '<td>'.$MyResults['FATHER_TYPE'].'</td>';
+                            echo '<td>'.$MyResults['MOTHER_TYPE'].'</td>';
+                            echo '<td>'.$MyResults['GUARDIAN_TYPE'].'</td>';
+                            echo '<td>'.$MyResults['DATE_STARTED'].'</a></td>';
+                        
+                           // echo '<td>'.$MyResults['MODE_PAY'].'</td>';
+                            
+                            echo '<td><a rel="facebox" href="payment_student.php?lastname='.$MyResults['STUD_LASTNAME'].'&firstname='.$MyResults['STUD_FIRSTNAME'].' &date_add='.$Myresults['DATE_ADDED'].'"><i class="fa fa-money" style="font-size:26px"></i></a></td>'; //here
+                            echo '<td><a rel="facebox" href="edit_student.php?lastname='.$MyResults['STUD_LASTNAME'].'&firstname='.$MyResults['STUD_FIRSTNAME'].'"><i class="fa fa-edit" style="font-size:26px"></i></a></td>'; //here                                                
+		                }
+	                	echo "</table>";
+	                	echo "</div> </div> </div>";
  					}
 
  					else
@@ -298,42 +308,42 @@
 		              	 <thead>
 			                <tr class = text-center>
 			                	<th>Application Year</th>
-			                	<th>Last Name</th>
-			                	<th>First Name</th>
+                                <th>Last Name</th>
+                                <th>First Name</th>
+                                <th>Middle Initial</th>
                                 <th>Sex</th>
-                                <th>Birthday</th>
                                 <th>Age</th>
-                                <th>Parent LastName</th>
-                                <th>Parent FirstName</th>
-                                <th>Contact Number</th>
-                                <th>Parent/Guardian Type</th>
-                                <th>Mode of Payment</th>
+                                <th>Dependent of (Father)</th>
+                                <th>Dependent of (Mother)</th>
+                                <th>Dependent of (Guardian)</th>
+                                <th>Date Started</th>
+                                <th>Pay</th>
                                 <th>Edit</th>
-                                <th>Delete</th>
 			                </tr>
 		                </thead>
-	        			";
-
+		    			";
 		                while ($MyResults = $MyValues -> fetch_assoc())
 		                {
-	                		echo '<tr>';
-	                		echo '<td> '.$MyResults['APP_YR'].' </td>';
-							echo '<td> '.$MyResults['STUD_LASTNAME'].' </td>';
-							echo '<td> '.$MyResults['STUD_FIRSTNAME'].' </td>';
-							echo '<td> '.$MyResults['STUD_SEX'].' </td>';
-							echo '<td> '.$MyResults['STUD_BIRTHDAY'].' </td>';
-							echo '<td> '.$MyResults['STUD_AGE'].' </td>';
-							echo '<td> '.$MyResults['PAR_LASTNAME'].' </td>';
-							echo '<td> '.$MyResults['PAR_FIRSTNAME'].' </td>';
-							echo '<td> '.$MyResults['PAR_CONTACT'].' </td>';
-							echo '<td> '.$MyResults['PAR_TYPE'].' </td>';
-							echo '<td> '.$MyResults['MODE_PAY'].' </td>';
-							echo '<td><a rel="facebox" href="edit_trans.php?num='.$MyResults['STUD_NAME'].'">Edit</a></td>';
-							echo '<td><a rel="facebox" href="delete.php?num='.$MyResults['STUD_NAME'].'" onClick="return deleteconfig()">Delete</a></td></tr>';
-		                }
+							echo '<tr>';
 
-		                echo "</table>";
-		               	echo "</div> </div> </div>";
+                            echo '<td>'.$MyResults['APP_YR'].'</a></td>';
+                            echo '<td><a rel="facebox" href="history.php?lname='.$MyResults['STUD_LASTNAME'].'&fname='.$MyResults['STUD_FIRSTNAME'].'">'.$MyResults['STUD_LASTNAME'].'</a></td>'; //here
+                            echo '<td>'.$MyResults['STUD_FIRSTNAME'].'</a></td>';
+                            echo '<td>'.$MyResults['STUD_MIDDLEINT'].'</a></td>';
+                            echo '<td>'.$MyResults['STUD_SEX'].'</td>';
+                            echo '<td>'.$MyResults['STUD_AGE'].'</td>';
+                            echo '<td>'.$MyResults['FATHER_TYPE'].'</td>';
+                            echo '<td>'.$MyResults['MOTHER_TYPE'].'</td>';
+                            echo '<td>'.$MyResults['GUARDIAN_TYPE'].'</td>';
+                            echo '<td>'.$MyResults['DATE_STARTED'].'</a></td>';
+                        
+                           // echo '<td>'.$MyResults['MODE_PAY'].'</td>';
+                            
+                            echo '<td><a rel="facebox" href="payment_student.php?lastname='.$MyResults['STUD_LASTNAME'].'&firstname='.$MyResults['STUD_FIRSTNAME'].' &date_add='.$Myresults['DATE_ADDED'].'"><i class="fa fa-money" style="font-size:26px"></i></a></td>'; //here
+                            echo '<td><a rel="facebox" href="edit_student.php?lastname='.$MyResults['STUD_LASTNAME'].'&firstname='.$MyResults['STUD_FIRSTNAME'].'"><i class="fa fa-edit" style="font-size:26px"></i></a></td>'; //here                                                
+		                }
+	                	echo "</table>";
+	                	echo "</div> </div> </div>";
  					}
 
  					else

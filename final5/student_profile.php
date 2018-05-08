@@ -21,76 +21,23 @@
     {
       while ($MyResults = $MyValues -> fetch_assoc())
       {
-        $appyr = $MyResults['APP_YR'];
-        $datestarted = $MyResults['DATE_STARTED'];
-        $semester = $MyResults['STUD_SEMESTER'];
-        $acadyear = $MyResults['STUD_ACADYEAR'];
-        $lastname = $MyResults['STUD_LASTNAME'];
-        $firstname = $MyResults['STUD_FIRSTNAME'];
-        $middleint = $MyResults['STUD_MIDDLEINT'];
-        $nickname = $MyResults['STUD_NICKNAME'];
-        $birthday = $MyResults['STUD_BIRTHDAY'];
-        $address = $MyResults['STUD_ADDRESS'];
-        $age = $MyResults['STUD_AGE'];
+        $yapp = $MyResults['APP_YR'];
+        $lname = $MyResults['STUD_LASTNAME'];
+        $fname =  $MyResults['STUD_FIRSTNAME'];
         $sex = $MyResults['STUD_SEX'];
-        $schedtime = $MyResults['STUD_SCHEDTIME'];
-        $schedday = $MyResults['STUD_SCHEDDAY'];
-        $flastname = $MyResults['FATHER_LASTNAME'];
-        $ffirstname = $MyResults['FATHER_FIRSTNAME'];
-        $fmiddleint = $MyResults['FATHER_MIDDLEINT'];
-        $ftype = $MyResults['FATHER_TYPE'];
-        $fage = $MyResults['FATHER_AGE'];
-        $fbirthday = $MyResults['FATHER_BIRTHDAY'];
-        $foccupation = $MyResults['FATHER_OCCUPATION'];
-        $foffice = $MyResults['FATHER_OFFICE'];
-        $fcontact = $MyResults['FATHER_CONTACT'];
-        $femail = $MyResults['FATHER_EMAIL'];
-
-        $mlastname = $MyResults['MOTHER_LASTNAME'];
-        $mfirstname = $MyResults['MOTHER_FIRSTNAME'];
-        $mmiddleint = $MyResults['MOTHER_MIDDLEINT'];
-        $mtype = $MyResults['MOTHER_TYPE'];
-        $mage = $MyResults['MOTHER_AGE'];
-        $mbirthday = $MyResults['MOTHER_BIRTHDAY'];
-        $moccupation = $MyResults['MOTHER_OCCUPATION'];
-        $moffice = $MyResults['MOTHER_OFFICE'];
-        $mcontact = $MyResults['MOTHER_CONTACT'];
-        $memail = $MyResults['MOTHER_EMAIL'];
-
-        $glastname = $MyResults['GUARDIAN_LASTNAME'];
-        $gfirstname = $MyResults['GUARDIAN_FIRSTNAME'];
-        $gmiddleint = $MyResults['GUARDIAN_MIDDLEINT'];
-        $gtype = $MyResults['GUARDIAN_TYPE'];
-        $gage = $MyResults['GUARDIAN_AGE'];
-        $gbirthday = $MyResults['GUARDIAN_BIRTHDAY'];
-        $goccupation = $MyResults['GUARDIAN_OCCUPATION'];
-        $goffice = $MyResults['GUARDIAN_OFFICE'];
-        $gcontact = $MyResults['GUARDIAN_CONTACT'];
-        $grelation = $MyResults['GUARDIAN_RELATION'];
-        $medicalbgone = $MyResults['MEDICALBG_ONE'];
-        $medicalbgtwo = $MyResults['MEDICALBG_TWO'];
-        $medicalbgthree = $MyResults['MEDICALBG_THREE'];
-        $medicalbgfour = $MyResults['MEDICALBG_FOUR'];
-        $medicalbgfive = $MyResults['MEDICALBG_FIVE'];
-        $medicalbgsix = $MyResults['MEDICALBG_SIX'];
-        $medicalbgseven = $MyResults['MEDICALBG_SEVEN'];
-
-        $elastname = $MyResults['EMER_LASTNAME'];
-        $efirstname = $MyResults['EMER_FIRSTNAME'];
-        $emiddleint = $MyResults['EMER_MIDDLEINT'];
-        $eaddress = $MyResults['EMER_ADDRESS'];
-        $econtact = $MyResults['EMER_CONTACT'];
-        $erelation = $MyResults['EMER_RELATION'];
-
-        $paymode = $MyResults['MODE_PAY'];
-        $amntpd = $MyResults['AMT_PAID'];
-        $datepd= $MyResults['DATE_PAID'];
+        $birthday =$MyResults['STUD_BIRTHDAY'];
+        $age = $MyResults['STUD_AGE'];
+        $par_lname = $MyResults['PAR_LASTNAME'];
+        $par_firstname = $MyResults['PAR_FIRSTNAME'];
+        $contact = $MyResults['PAR_CONTACT'];
+        $par_type = $MyResults['PAR_TYPE'];
+        $mode_pay =  $MyResults['MODE_PAY'];
       }
     }
 
 if($_POST['save'])
   {
-    $nsappyear = $_POST['sappyr'];
+    $nsappyear = $_POST['sappyear'];
     $nsdatestarted = $_POST['sdatestarted'];
     $nslastname = $_POST['slastname'];
     $nsfirstname = $_POST['sfirstname'];
@@ -156,7 +103,7 @@ if($_POST['save'])
 
     $fixedName = mysqli_real_escape_string($MyConnection, $nsname);
 
-    mysqli_query($MyConnection, "UPDATE STUDENT SET APP_YR = '$nsappyear', DATE_STARTED = '$nsdatestarted', STUD_LASTNAME = '$nslastname', STUD_FIRSTNAME = '$nsfirstname', STUD_MIDDLEINT = '$nsmiddleint', STUD_NICKNAME = '$nsnickname', STUD_BIRTHDAY = '$nsbirthday', STUD_ADDRESS = '$nsaddress', STUD_AGE = '$nsage', STUD_SEX = '$nssex', STUD_SCHEDTIME = '$nsschedtime', STUD_SCHEDDAY = '$nsschedday', FATHER_LASTNAME = '$nsflastname', FATHER_FIRSTNAME = '$nsffirstname', FATHER_MIDDLEINT = '$nsfmiddleint', FATHER_TYPE = '$nsftype', FATHER_AGE = '$nsfage', FATHER_BIRTHDAY = '$nsfbirthday', FATHER_OCCUPATION = '$nsfoccupation', FATHER_OFFICE = '$nsfoffice', FATHER_CONTACT = '$nsfcontact', FATHER_EMAIL = '$nsfemail', MOTHER_LASTNAME = '$nsmlastname', MOTHER_FIRSTNAME = '$nsmfirstname', MOTHER_MIDDLEINT = '$nsmmiddleint', MOTHER_TYPE = '$nsmtype', MOTHER_AGE = '$nsmage', MOTHER_BIRTHDAY = '$nsmbirthday', MOTHER_OCCUPATION = '$nsmoccupation', MOTHER_OFFICE = '$nsmoffice', MOTHER_CONTACT = '$nsmcontact', MOTHER_EMAIL= '$nsmemail', GUARDIAN_LASTNAME = '$nsglastname', GUARDIAN_FIRSTNAME = '$nsgfirstname', GUARDIAN_MIDDLEINT = '$nsgmiddleint', GUARDIAN_TYPE = '$nsgtype', GUARDIAN_AGE = '$nsgage', GUARDIAN_BIRTHDAY = '$nsgbirthday', GUARDIAN_OCCUPATION = '$nsgoccupation', GUARDIAN_OFFICE = '$nsgoffice', GUARDIAN_CONTACT = '$nsgcontact', GUARDIAN_RELATION = '$nsgrelation', MEDICALBG_ONE = '$nsmbone', MEDICALBG_TWO = '$nsmbtwo', MEDICALBG_THREE = '$nsmbthree', MEDICALBG_FOUR = '$nsmbfour', MEDICALBG_FIVE = '$nsmbfive', MEDICALBG_SIX = '$nsmbsix', MEDICALBG_SEVEN = '$nsmbseven', EMER_LASTNAME = '$nselastname', EMER_FIRSTNAME = '$nsefirstname', EMER_MIDDLEINT = '$nsemiddleint', EMER_ADDRESS = '$nseaddress', EMER_CONTACT = '$nsecontact', EMER_RELATION = '$nserelation', MODE_PAY = '$nsmodepay';");
+    mysqli_query($MyConnection, "UPDATE STUDENT SET APP_YR = '$nsappyear', DATE_STARTED = '$nsdatestarted', STUD_LASTNAME = '$nslastname', STUD_FIRSTNAME = '$nsfirstname', STUD_MIDDLEINT = ' $nsmiddleint', STUD_NICKNAME = '$nsnickname', STUD_BIRTHDAY = '$nsbirthday', STUD_ADDRESS = '$nsaddress', STUD_AGE = '$nsage', STUD_SEX = '$nssex', STUD_SCHEDTIME = '$nsschedtime', STUD_SCHEDDAY = '$nsschedday', FATHER_LASTNAME = '$nsflastname', FATHER_FIRSTNAME = '$nsffirstname', FATHER_MIDDLEINT = '$nsfmiddleint', FATHER_TYPE = '$nsftype', FATHER_AGE = '$nsfage', FATHER_BIRTHDAY = '$nsfbirthday', FATHER_OCCUPATION = '$nsfoccupation', FATHER_OFFICE = '$nsfoffice', FATHER_CONTACT = '$nsfcontact', FATHER_EMAIL = '$nsfemail', MOTHER_LASTNAME = '$nsmlastname', MOTHER_FIRSTNAME = '$nsmfirstname', MOTHER_MIDDLEINT = '$nsmmiddleint', MOTHER_TYPE = '$nsmtype', MOTHER_AGE = '$nsmage', MOTHER_BIRTHDAY = '$nsmbirthday', MOTHER_OCCUPATION = '$nsmoccupation', MOTHER_OFFICE = '$nsmoffice', MOTHER_CONTACT = '$nsmcontact', MOTHER_EMAIL= '$nsmemail', GUARDIAN_LASTNAME = '$nsglastname', GUARDIAN_FIRSTNAME = '$nsgfirstname', GUARDIAN_MIDDLEINT = '$nsgmiddleint', GUARDIAN_TYPE = '$nsgtype', GUARDIAN_AGE = '$nsgage', GUARDIAN_BIRTHDAY = '$nsgbirthday', GUARDIAN_OCCUPATION = '$nsgoccupation', GUARDIAN_OFFICE = '$nsgoffice', GUARDIAN_CONTACT = '$nsgcontact', GUARDIAN_RELATION = '$nsgrelation', MEDICALBG_ONE = '$nsmbone', MEDICALBG_TWO = '$nsmbtwo', MEDICALBG_THREE = '$nsmbthree', MEDICALBG_FOUR = '$nsmbfour', MEDICALBG_FIVE = '$nsmbfive', MEDICALBG_SIX = '$nsmbsix', MEDICALBG_SEVEN = '$nsmbseven', EMER_LASTNAME = '$nselastname', EMER_FIRSTNAME = '$nsefirstname', EMER_MIDDLEINT = '$nsemiddleint', EMER_ADDRESS = '$nseaddress', EMER_CONTACT = '$nsecontact', EMER_RELATION = '$nserelation', MODE_PAY = '$nsmodepay';");
     
 
     echo "<script>alert('Added Successfully!');
@@ -240,22 +187,21 @@ if($_POST['save'])
                                       <label for="example-number-input" class="col-2 col-form-label">Application Year</label>
                                       <div class="col-10 col-md-4">
                                         <select name="sappyr" class = "form-control">
-                                          <option <?php if ($appyr == "2015") echo 'selected' ; ?> value = "2015">2015</option>
-                                          <option <?php if ($appyr == "2016") echo 'selected' ; ?> value = "2016">2016</option>
-                                          <option <?php if ($appyr == "2017") echo 'selected' ; ?> value = "2017">2017</option>
-                                          <option <?php if ($appyr == "2018") echo 'selected' ; ?> value = "2018">2018</option>
-                                          <option <?php if ($appyr == "2019") echo 'selected' ; ?> value = "2019">2019</option>
-                                          <option <?php if ($appyr == "2020") echo 'selected' ; ?> value = "2020">2020</option>
-                                          <option <?php if ($appyr == "2021") echo 'selected' ; ?> value = "2021">2021</option>
-                                          <option <?php if ($appyr == "2022") echo 'selected' ; ?> value = "2022">2022</option>
-                                          <option <?php if ($appyr == "2023") echo 'selected' ; ?> value = "2023">2023</option>
-                                          <option <?php if ($appyr == "2024") echo 'selected' ; ?> value = "2024">2024</option>
-                                          <option <?php if ($appyr == "2025") echo 'selected' ; ?> value = "2025">2025</option>
+                                          <option value="2015">2015</option>
+                                          <option value="2016">2016</option>
+                                          <option value="2017">2018</option>
+                                          <option value="2018">2019</option>
+                                          <option value="2019">2020</option>
+                                          <option value="2020">2021</option>
+                                          <option value="2020">2022</option>
+                                          <option value="2020">2023</option>
+                                          <option value="2020">2024</option>
+                                          <option value="2020">2025</option>
                                         </select>
                                       </div>
                                       <label for="example-number-input" class="col-2 col-form-label">Date Started</label>
                                       <div class="col-8 col-md-4">
-                                        <input class="form-control" name = "sdatestarted" type="date" value = "<?php echo $datestarted; ?>">
+                                        <input class="form-control" name = "sdatestarted" type="date">
                                       </div>
                                     </div>
 
@@ -263,23 +209,23 @@ if($_POST['save'])
                                       <label for="example-number-input" class="col-2 col-form-label">Semester</label>
                                       <div class="col-10 col-md-4">
                                         <select name="ssemester" class = "form-control">
-                                          <option <?php if ($semester == "First") echo 'selected' ; ?> value = "First">First</option>
-                                          <option <?php if ($semester == "Second") echo 'selected' ; ?> value = "Second">Second</option>
-                                          <option <?php if ($semester == "Midyear") echo 'selected' ; ?> value = "Midyear">Midyear</option>
-                                          <option <?php if ($semester == "Not specified") echo 'selected' ; ?> value = "Not specified">Not specified</option>
+                                          <option value="First">First</option>
+                                          <option value="Second">Second</option>
+                                          <option value="Midyear">Midyear</option>
+                                          <option value="Not specified">Not specified</option>
                                         </select>
                                       </div>
                                       <label for="example-number-input" class="col-2 col-form-label">Academic Year</label>
                                       <div class="col-10 col-md-4">
                                         <select name="sacadyear" class = "form-control">
-                                          <option <?php if ($acadyear == "2014 - 2015") echo 'selected' ; ?> value = "2014 - 2015">2014 - 2015</option>
-                                          <option <?php if ($acadyear == "2015 - 2016") echo 'selected' ; ?> value = "2015 - 2016">2015 - 2016</option>
-                                          <option <?php if ($acadyear == "2016 - 2017") echo 'selected' ; ?> value = "2016 - 2017">2016 - 2017</option>
-                                          <option <?php if ($acadyear == "2017 - 2018") echo 'selected' ; ?> value = "2017 - 2018">2017 - 2018</option>
-                                          <option <?php if ($acadyear == "2018 - 2019") echo 'selected' ; ?> value = "2018 - 2019">2018 - 2019</option>
-                                          <option <?php if ($acadyear == "2019 - 2020") echo 'selected' ; ?> value = "2019 - 2020">2019 - 2020</option>
-                                          <option <?php if ($acadyear == "2020 - 2021") echo 'selected' ; ?> value = "2020 - 2021">2020 - 2021</option>
-                                          <option <?php if ($acadyear == "2021 - 2022") echo 'selected' ; ?> value = "2021 - 2022">2021 - 2022</option>
+                                          <option value="2014 - 2015">2014 - 2015</option>
+                                          <option value="2015 - 2016">2015 - 2016</option>
+                                          <option value="2016 - 2017">2016 - 2017</option>
+                                          <option value="2017 - 2018">2017 - 2018</option>
+                                          <option value="2018 - 2019">2018 - 2019</option>
+                                          <option value="2019 - 2020">2019 - 2020</option>
+                                          <option value="2020 - 2021">2020 - 2021</option>
+                                          <option value="2021 - 2022">2021 - 2022</option>
                                         </select>
                                       </div>
                                     </div>
@@ -293,21 +239,21 @@ if($_POST['save'])
 
                                     <div class="form-group row">
                                       <label for="example-number-input" class="col-2 col-form-label">Student Name</label>
-                                      <div class="col-10 col-md-4"> <input class="form-control" name = "slastname" value = "<?php echo $lastname; ?>"> 
+                                      <div class="col-10 col-md-4"> <input class="form-control" name = "slastname" placeholder = "Last Name"> 
                                       </div>
-                                      <div class="col-10 col-md-4"> <input class="form-control" name = "sfirstname" value = "<?php echo $firstname; ?>"> 
+                                      <div class="col-10 col-md-4"> <input class="form-control" name = "sfirstname" placeholder = "First Name"> 
                                       </div>
-                                      <div class="col-10 col-md-2"> <input class="form-control" name = "smiddleint" value = "<?php echo $middleint; ?>"> 
+                                      <div class="col-10 col-md-2"> <input class="form-control" name = "smiddleint" placeholder = "Middle Initial"> 
                                       </div>
                                     </div>
 
                                     <div class="form-group row">
                                       <label for="example-number-input" class="col-2 col-form-label">Nickname</label>
-                                      <div class="col-10 col-md-3"> <input class="form-control" name = "snickname" value = "<?php echo $nickname; ?>"> 
+                                      <div class="col-10 col-md-3"> <input class="form-control" name = "snickname"> 
                                       </div>
                                       
                                       <label for="example-number-input" class="col-2 col-form-label">Address</label>
-                                      <div class="col-10 col-md-5"> <input class="form-control" name = "saddress" value = "<?php echo $address; ?>"> 
+                                      <div class="col-10 col-md-5"> <input class="form-control" name = "saddress"> 
                                       </div>
                                     </div>
 
@@ -315,25 +261,25 @@ if($_POST['save'])
                                       <label for="example-number-input" class="col-2 col-form-label">Sex</label>
                                       <div class="col-10 col-md-2">
                                         <select name="ssex" class = "form-control">
-                                          <option <?php if ($sex == "Female") echo 'selected' ; ?> value="Female">Female</option>
-                                          <option <?php if ($sex == "Male") echo 'selected' ; ?> value="Male">Male</option>
+                                          <option value="Female">Female</option>
+                                          <option value="Male">Male</option>
                                         </select>
                                       </div>
                                       <label for="example-number-input" class="col-1 col-form-label">Age</label>
                                       <div class="col-8 col-md-2">
-                                        <input class="form-control" name = "sage" value = "<?php echo $age; ?>">
+                                        <input class="form-control" name = "sage">
                                       </div>
                                       <label for="example-number-input" class="col-2 col-form-label">Birthday</label>
                                       <div class="col-8 col-md-3">
-                                        <input class="form-control" name = "sbirthday" type="date" value = "<?php echo $birthday; ?>">
+                                        <input class="form-control" name = "sbirthday" type="date">
                                       </div>
                                     </div>
                                   
                                   <div class="form-group row">
                                     <label for="example-number-input" class="col-2 col-form-label">Child's Schedule</label>
-                                    <div class="col-10 col-md-5"> <input class="form-control" name = "sschedtime" value = "<?php echo $schedtime; ?>"> 
+                                    <div class="col-10 col-md-5"> <input class="form-control" name = "sschedtime" placeholder = "Time"> 
                                     </div>
-                                    <div class="col-10 col-md-5"> <input class="form-control" name = "sschedday" value = "<?php echo $schedday; ?>"> 
+                                    <div class="col-10 col-md-5"> <input class="form-control" name = "sschedday" placeholder = "Day"> 
                                     </div>
                                   </div>
 
@@ -347,11 +293,11 @@ if($_POST['save'])
                                   <br>
                                   <div class="form-group row">
                                       <label for="example-number-input" class="col-2 col-form-label">Father's Name</label>
-                                      <div class="col-10 col-md-4"> <input class="form-control" name = "sflastname" value = "<?php echo $flastname; ?>"> 
+                                      <div class="col-10 col-md-4"> <input class="form-control" name = "sflastname" placeholder = "Last Name"> 
                                       </div>
-                                      <div class="col-10 col-md-4"> <input class="form-control" name = "sffirstname" value = "<?php echo $ffirstname; ?>"> 
+                                      <div class="col-10 col-md-4"> <input class="form-control" name = "sffirstname" placeholder = "First Name"> 
                                       </div>
-                                      <div class="col-10 col-md-2"> <input class="form-control" name = "sfmiddleint" value = "<?php echo $fmiddleint; ?>"> 
+                                      <div class="col-10 col-md-2"> <input class="form-control" name = "sfmiddleint" placeholder = "Middle Initial"> 
                                       </div>
                                   </div>
 
@@ -359,99 +305,99 @@ if($_POST['save'])
                                   <label for="example-number-input" class="col-2 col-form-label">Type of Employee</label>
                                   <div class="col-10 col-md-4">
                                     <select name="sftype" class = "form-control">
-                                      <option <?php if ($ftype == "Not Applicable") echo 'selected' ; ?> value = "--">Not Applicable</option>
-                                      <option <?php if ($ftype == "Faculty") echo 'selected' ; ?> value = "Faculty">Faculty</option>
-                                      <option <?php if ($ftype == "Admin/REPS") echo 'selected' ; ?> value = "Admin/REPS">Admin/REPS</option>
-                                      <option <?php if ($ftype == "Student") echo 'selected' ; ?> value = "Student">Student</option>
-                                      <option <?php if ($ftype == "Alumni") echo 'selected' ; ?> value = "Alumni">Alumni</option>
-                                      <option <?php if ($ftype == "Agency") echo 'selected' ; ?> value = "Agency">Agency</option>
+                                      <option value="--">Not Applicable</option>
+                                      <option value="Faculty">Faculty</option>
+                                      <option value="Admin/Reps">Admin/REPS</option>
+                                      <option value="Student">Student</option>
+                                      <option value="Alumni">Alumni</option>
+                                      <option value="Agency">Agency</option>
                                     </select>
                                   </div>
                                   <label for="example-number-input" class="col-2 col-form-label">Occupation</label>
-                                  <div class="col-10 col-md-4"> <input class="form-control" name = "sfoccupation" value = "<?php echo $foccupation; ?>"> 
+                                  <div class="col-10 col-md-4"> <input class="form-control" name = "sfoccupation"> 
                                   </div>
                                 </div>
 
                               <div class="form-group row">
                                 <label for="example-number-input" class="col-2 col-form-label">Office/Department</label>
-                                <div class="col-10 col-md-2"> <input class="form-control" name = "sfoffice" value = "<?php echo $foffice; ?>"> 
+                                <div class="col-10 col-md-2"> <input class="form-control" name = "sfoffice"> 
                                 </div>
                                 <label for="example-number-input" class="col-2 col-form-label">Age</label>
-                                <div class="col-10 col-md-2"> <input class="form-control" name = "sfage" value = "<?php echo $fage; ?>"> 
+                                <div class="col-10 col-md-2"> <input class="form-control" name = "sfage"> 
                                 </div>
                                 <label for="example-number-input" class="col-2 col-form-label">Birthday</label>
                                 <div class="col-8 col-md-2">
-                                  <input class="form-control" name = "sfbirthday" type="date" value = "<?php echo $fbirthday; ?>">
+                                  <input class="form-control" name = "sfbirthday" type="date">
                                 </div>
                               </div>
 
                               <div class="form-group row">
                                 <label for="example-number-input" class="col-2 col-form-label">Contact</label>
-                                <div class="col-10 col-md-4"> <input class="form-control" name = "sfcontact" value = "<?php echo $fcontact; ?>"> 
+                                <div class="col-10 col-md-4"> <input class="form-control" name = "sfcontact"> 
                                 </div>
                                 <label for="example-number-input" class="col-2 col-form-label">Email</label>
-                                <div class="col-10 col-md-4"> <input class="form-control" name = "sfemail" value = "<?php echo $femail; ?>"> 
+                                <div class="col-10 col-md-4"> <input class="form-control" name = "sfemail"> 
                                 </div>
                               </div>
 
                               <br>
                               <div class="form-group row">
                                 <label for="example-number-input" class="col-2 col-form-label">Mother's Name</label>
-                                <div class="col-10 col-md-4"> <input class="form-control" name = "smlastname" value = "<?php echo $mlastname; ?>"> 
+                                <div class="col-10 col-md-4"> <input class="form-control" name = "smlastname" placeholder = "Last Name"> 
                                 </div>
-                                <div class="col-10 col-md-4"> <input class="form-control" name = "smfirstname" value = "<?php echo $mfirstname; ?>"> 
+                                <div class="col-10 col-md-4"> <input class="form-control" name = "smfirstname" placeholder = "First Name"> 
                                 </div>
-                                <div class="col-10 col-md-2"> <input class="form-control" name = "smmiddleint" value = "<?php echo $mmiddleint; ?>"> 
+                                <div class="col-10 col-md-2"> <input class="form-control" name = "smmiddleint" placeholder = "Middle Initial"> 
                                 </div>
                               </div>
 
                                 <div class="form-group row">
                                   <label for="example-number-input" class="col-2 col-form-label">Type of Employee</label>
                                   <div class="col-10 col-md-4">
-                                     <select name="smtype" class = "form-control">
-                                      <option <?php if ($mtype == "Not Applicable") echo 'selected' ; ?> value = "--">Not Applicable</option>
-                                      <option <?php if ($mtype == "Faculty") echo 'selected' ; ?> value = "Faculty">Faculty</option>
-                                      <option <?php if ($mtype == "Admin/REPS") echo 'selected' ; ?> value = "Admin/REPS">Admin/REPS</option>
-                                      <option <?php if ($mtype == "Student") echo 'selected' ; ?> value = "Student">Student</option>
-                                      <option <?php if ($mtype == "Alumni") echo 'selected' ; ?> value = "Alumni">Alumni</option>
-                                      <option <?php if ($mtype == "Agency") echo 'selected' ; ?> value = "Agency">Agency</option>
+                                    <select name="smtype" class = "form-control">
+                                      <option value="--">Not Applicable</option>
+                                      <option value="Faculty">Faculty</option>
+                                      <option value="Admin/Reps">Admin/REPS</option>
+                                      <option value="Student">Student</option>
+                                      <option value="Alumni">Alumni</option>
+                                      <option value="Agency">Agency</option>
                                     </select>
                                   </div>
                                   <label for="example-number-input" class="col-2 col-form-label">Occupation</label>
-                                  <div class="col-10 col-md-4"> <input class="form-control" name = "smoccupation" value = "<?php echo $moccupation; ?>"> 
+                                  <div class="col-10 col-md-4"> <input class="form-control" name = "smoccupation"> 
                                   </div>
                                 </div>
 
                               <div class="form-group row">
                                 <label for="example-number-input" class="col-2 col-form-label">Office/Department</label>
-                                <div class="col-10 col-md-2"> <input class="form-control" name = "smoffice" value = "<?php echo $moffice; ?>"> 
+                                <div class="col-10 col-md-2"> <input class="form-control" name = "smoffice"> 
                                 </div>
                                 <label for="example-number-input" class="col-2 col-form-label">Age</label>
-                                <div class="col-10 col-md-2"> <input class="form-control" name = "smage" value = "<?php echo $mage; ?>"> 
+                                <div class="col-10 col-md-2"> <input class="form-control" name = "smage"> 
                                 </div>
                                 <label for="example-number-input" class="col-2 col-form-label">Birthday</label>
                                 <div class="col-8 col-md-2">
-                                  <input class="form-control" name = "smbirthday" type="date" value = "<?php echo $mbirthday; ?>">
+                                  <input class="form-control" name = "smbirthday" type="date">
                                 </div>
                               </div>
 
                               <div class="form-group row">
                                 <label for="example-number-input" class="col-2 col-form-label">Contact</label>
-                                <div class="col-10 col-md-4"> <input class="form-control" name = "smcontact" value = "<?php echo $mcontact; ?>"> 
+                                <div class="col-10 col-md-4"> <input class="form-control" name = "smcontact"> 
                                 </div>
                                 <label for="example-number-input" class="col-2 col-form-label">Email</label>
-                                <div class="col-10 col-md-4"> <input class="form-control" name = "smemail" value = "<?php echo $memail; ?>"> 
+                                <div class="col-10 col-md-4"> <input class="form-control" name = "smemail"> 
                                 </div>
                               </div>
 
                               <br>
                               <div class="form-group row">
                                 <label for="example-number-input" class="col-2 col-form-label">Guardians's Name</label>
-                                <div class="col-10 col-md-4"> <input class="form-control" name = "sglastname" value = "<?php echo $glastname; ?>"> 
+                                <div class="col-10 col-md-4"> <input class="form-control" name = "sglastname" placeholder = "Last Name"> 
                                 </div>
-                                <div class="col-10 col-md-4"> <input class="form-control" name = "sgfirstname" value = "<?php echo $gfirstname; ?>"> 
+                                <div class="col-10 col-md-4"> <input class="form-control" name = "sgfirstname" placeholder = "First Name"> 
                                 </div>
-                                <div class="col-10 col-md-2"> <input class="form-control" name = "sgmiddleint" value = "<?php echo $gmiddleint; ?>"> 
+                                <div class="col-10 col-md-2"> <input class="form-control" name = "sgmiddleint" placeholder = "Middle Initial"> 
                                 </div>
                               </div>
 
@@ -459,38 +405,38 @@ if($_POST['save'])
                                   <label for="example-number-input" class="col-2 col-form-label">Type of Employee</label>
                                   <div class="col-10 col-md-4">
                                     <select name="sgtype" class = "form-control">
-                                      <option <?php if ($gtype == "Not Applicable") echo 'selected' ; ?> value = "--">Not Applicable</option>
-                                      <option <?php if ($gtype == "Faculty") echo 'selected' ; ?> value = "Faculty">Faculty</option>
-                                      <option <?php if ($gtype == "Admin/REPS") echo 'selected' ; ?> value = "Admin/REPS">Admin/REPS</option>
-                                      <option <?php if ($gtype == "Student") echo 'selected' ; ?> value = "Student">Student</option>
-                                      <option <?php if ($gtype == "Alumni") echo 'selected' ; ?> value = "Alumni">Alumni</option>
-                                      <option <?php if ($gtype == "Agency") echo 'selected' ; ?> value = "Agency">Agency</option>
+                                      <option value="--">Not Applicable</option>
+                                      <option value="Faculty">Faculty</option>
+                                      <option value="Admin/Reps">Admin/REPS</option>
+                                      <option value="Student">Student</option>
+                                      <option value="Alumni">Alumni</option>
+                                      <option value="Agency">Agency</option>
                                     </select>
                                   </div>
                                   <label for="example-number-input" class="col-2 col-form-label">Occupation</label>
-                                  <div class="col-10 col-md-4"> <input class="form-control" name = "sgoccupation" value = "<?php echo $goccupation; ?>"> 
+                                  <div class="col-10 col-md-4"> <input class="form-control" name = "sgoccupation"> 
                                   </div>
                                 </div>
 
                               <div class="form-group row">
                                 <label for="example-number-input" class="col-2 col-form-label">Office/Department</label>
-                                <div class="col-10 col-md-2"> <input class="form-control" name = "sgoffice" value = "<?php echo $goffice; ?>"> 
+                                <div class="col-10 col-md-2"> <input class="form-control" name = "sgoffice"> 
                                 </div>
                                 <label for="example-number-input" class="col-2 col-form-label">Age</label>
-                                <div class="col-10 col-md-2"> <input class="form-control" name = "sgage" value = "<?php echo $gage; ?>"> 
+                                <div class="col-10 col-md-2"> <input class="form-control" name = "sgage"> 
                                 </div>
                                 <label for="example-number-input" class="col-2 col-form-label">Birthday</label>
                                 <div class="col-8 col-md-2">
-                                  <input class="form-control" name = "sgbirthday" type="date" value = "<?php echo $gbirthday; ?>">
+                                  <input class="form-control" name = "sgbirthday" type="date">
                                 </div>
                               </div>
 
                               <div class="form-group row">
                                 <label for="example-number-input" class="col-2 col-form-label">Contact</label>
-                                <div class="col-10 col-md-4"> <input class="form-control" name = "sgcontact" value = "<?php echo $gcontact; ?>"> 
+                                <div class="col-10 col-md-4"> <input class="form-control" name = "sgcontact"> 
                                 </div>
                                 <label for="example-number-input" class="col-2 col-form-label">Relationship to the Child</label>
-                                <div class="col-10 col-md-4"> <input class="form-control" name = "sgrelation" value = "<?php echo $grelation; ?>"> 
+                                <div class="col-10 col-md-4"> <input class="form-control" name = "sgrelation"> 
                                 </div>
                               </div>
 
@@ -499,60 +445,60 @@ if($_POST['save'])
                             <br>
                             <div class="form-group row">
                               <p class="indent"></p><b> 1. Does your child have any medication? If yes, explain. </b>
-                              </div>
+                            </div>
 
-                              <div class="form-group row">
-                               <div class="col-10 col-md-12"> <input class="form-control" name = "smbone" value = "<?php echo $medicalbgone; ?>"> 
-                                  </div>
-                              </div>
+                            <div class="form-group row">
+                             <div class="col-10 col-md-12"> <input class="form-control" name = "smedicalbgone"> 
+                                </div>
+                            </div>
 
-                              <div class="form-group row">
-                                <p class="indent"></p><b> 2. Does your child have any allergies? If yes, specify.</b>
-                              </div>
-                              <div class="form-group row">
-                               <div class="col-10 col-md-12"> <input class="form-control" name = "smbtwo" value = "<?php echo $medicalbgtwo; ?>"> 
-                                  </div>
-                              </div>
+                            <div class="form-group row">
+                              <p class="indent"></p><b> 2. Does your child have any allergies? If yes, specify.</b>
+                            </div>
+                            <div class="form-group row">
+                             <div class="col-10 col-md-12"> <input class="form-control" name = "smedicalbgtwo"> 
+                                </div>
+                            </div>
 
-                              <div class="form-group row">
-                                <p class="indent"></p><b> 3. Does your child have any fears? If yes, specify.</b>
-                              </div>
-                              <div class="form-group row">
-                               <div class="col-10 col-md-12"> <input class="form-control" name = "smbthree" value = "<?php echo $medicalbgthree; ?>"> 
-                                  </div>
-                              </div>
+                            <div class="form-group row">
+                              <p class="indent"></p><b> 3. Does your child have any fears? If yes, specify.</b>
+                            </div>
+                            <div class="form-group row">
+                             <div class="col-10 col-md-12"> <input class="form-control" name = "smedicalbgthree"> 
+                                </div>
+                            </div>
 
-                              <div class="form-group row">
-                                <p class="indent"></p><b> 4. Does your child have any sleeping time? If yes, write the time he/ she would sleep. </b>
-                              </div>
-                              <div class="form-group row">
-                               <div class="col-10 col-md-12"> <input class="form-control" name = "smbfour" value = "<?php echo $medicalbgfour; ?>"> 
-                                  </div>
-                              </div>
+                            <div class="form-group row">
+                              <p class="indent"></p><b> 4. Does your child have any sleeping time? If yes, write the time he/ she would sleep. </b>
+                            </div>
+                            <div class="form-group row">
+                             <div class="col-10 col-md-12"> <input class="form-control" name = "smedicalbgfour"> 
+                                </div>
+                            </div>
 
-                              <div class="form-group row">
-                                <p class="indent"></p><b> 5. Does your child easily get frustrated? If yes, in what way? </b>
-                              </div>
-                              <div class="form-group row">
-                               <div class="col-10 col-md-12"> <input class="form-control" name = "smbfive" value = "<?php echo $medicalbgfive; ?>"> 
-                                  </div>
-                              </div>
+                            <div class="form-group row">
+                              <p class="indent"></p><b> 5. Does your child easily get frustrated? If yes, in what way? </b>
+                            </div>
+                            <div class="form-group row">
+                             <div class="col-10 col-md-12"> <input class="form-control" name = "smedicalbgfive"> 
+                                </div>
+                            </div>
 
-                              <div class="form-group row">
-                                <p class="indent"></p><b> 6. Does your child have any other Psychological or Medical conditions? If yes, please explain.</b>
-                              </div>
-                              <div class="form-group row">
-                               <div class="col-10 col-md-12"> <input class="form-control" name = "smbsix" value = "<?php echo $medicalbgsix; ?>"> 
-                                  </div>
-                              </div>
+                            <div class="form-group row">
+                              <p class="indent"></p><b> 6. Does your child have any other Psychological or Medical conditions? If yes, please explain.</b>
+                            </div>
+                            <div class="form-group row">
+                             <div class="col-10 col-md-12"> <input class="form-control" name = "smedicalbgsix"> 
+                                </div>
+                            </div>
 
-                              <div class="form-group row">
-                                <p class="indent"></p><b> 7. Anything else about your child that the teacher should know? </b>
-                              </div>
-                              <div class="form-group row">
-                               <div class="col-10 col-md-12"> <input class="form-control" name = "smbseven" value = "<?php echo $medicalbgseven; ?>"> 
-                                  </div>
-                              </div>
+                            <div class="form-group row">
+                              <p class="indent"></p><b> 7. Anything else about your child that the teacher should know? </b>
+                            </div>
+                            <div class="form-group row">
+                             <div class="col-10 col-md-12"> <input class="form-control" name = "smedicalbgseven"> 
+                                </div>
+                            </div>
 
 
                             <br>
@@ -560,26 +506,26 @@ if($_POST['save'])
                             <br>
                             <div class="form-group row">
                               <label for="example-number-input" class="col-2 col-form-label">Name</label>
-                              <div class="col-10 col-md-4"> <input class="form-control" name = "selastname" value = "<?php echo $elastname; ?>"> 
+                              <div class="col-10 col-md-4"> <input class="form-control" name = "selastname" placeholder = "Last Name"> 
                               </div>
-                              <div class="col-10 col-md-4"> <input class="form-control" name = "sefirstname" value = "<?php echo $efirstname; ?>"> 
+                              <div class="col-10 col-md-4"> <input class="form-control" name = "sefirstname" placeholder = "First Name"> 
                               </div>
-                              <div class="col-10 col-md-2"> <input class="form-control" name = "semiddleint" value = "<?php echo $emiddleint; ?>"> 
+                              <div class="col-10 col-md-2"> <input class="form-control" name = "semiddleint" placeholder = "Middle Initial"> 
                               </div>
                             </div>
 
                             <div class="form-group row">
                               <label for="example-number-input" class="col-2 col-form-label">Address</label>
-                              <div class="col-10 col-md-4"> <input class="form-control" name = "seaddress" value = "<?php echo $eaddress; ?>">
+                              <div class="col-10 col-md-4"> <input class="form-control" name = "seaddress">
                               </div>
                               <label for="example-number-input" class="col-2 col-form-label">Contact Number</label>
-                              <div class="col-10 col-md-4"> <input class="form-control" name = "secontact" value = "<?php echo $econtact; ?>">
+                              <div class="col-10 col-md-4"> <input class="form-control" name = "secontact">
                               </div>
                             </div>
 
                             <div class="form-group row">
                               <label for="example-number-input" class="col-2 col-form-label">Relation</label>
-                              <div class="col-10 col-md-4"> <input class="form-control" name = "serelation" value = "<?php echo $erelation; ?>">
+                              <div class="col-10 col-md-4"> <input class="form-control" name = "serelation">
                               </div>
                             </div>
 
@@ -590,17 +536,17 @@ if($_POST['save'])
                                   <label for="example-number-input" class="col-2 col-form-label">Payment Mode</label>
                                   <div class="col-10 col-md-2">
                                     <select name="spaymode" class = "form-control">
-                                      <option <?php if ($paymode == "Monthly") echo 'selected' ; ?> value = "Monthly">Monthly</option>
-                                      <option <?php if ($paymode == "Drop-in") echo 'selected' ; ?> value="Drop-in">Drop-in</option>
+                                      <option value="Monthly">Monthly</option>
+                                      <option value="Drop-in">Drop-in</option>
                                     </select>
                                   </div>
                                   <label for="example-number-input" class="col-2 col-form-label">Amount Paid</label>
                                   <div class="col-10 col-md-2">
-                                    <input class="form-control" name="apaid" value = "<?php echo $amntpd; ?>"> 
+                                    <input class="form-control" name="apaid"> 
                                   </div>
                                   <label for="example-number-input" class="col-2 col-form-label">Date Paid</label>
                                   <div class="col-10 col-md-2">
-                                    <input class="form-control" name="dpaid" type = "date" value = "<?php echo $datepd; ?>"> 
+                                    <input class="form-control" name="dpaid" type = "date"> 
                                   </div>
                                 </div>
 
