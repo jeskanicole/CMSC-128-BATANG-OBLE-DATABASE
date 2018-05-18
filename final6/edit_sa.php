@@ -96,7 +96,7 @@
 
 
 
-        mysqli_query($MyConnection,"UPDATE SA SET SA_LASTNAME ='$nsalastname', SA_FIRSTNAME = '$nsafirstname', SA_MIDDLE = '$nsamiddle', SA_STUDNUM = '$nsastudnum', SA_COURSE = '$nsacourse', SA_COLLEGE = '$nsacollege', SA_YEAR = '$nsayear', SA_SEX = '$nsasex', SA_ADDRESS = '$nsaaddress', SA_EMAIL = '$nsaemail', SA_CONTACT = '$nsacontact' , SA_HOURS = '$nsahours';");
+        mysqli_query($MyConnection,"UPDATE SA SET SA_LASTNAME ='$nsalastname', SA_FIRSTNAME = '$nsafirstname', SA_MIDDLE = '$nsamiddle', SA_STUDNUM = '$nsastudnum', SA_COURSE = '$nsacourse', SA_COLLEGE = '$nsacollege', SA_YEAR = '$nsayear', SA_SEX = '$nsasex', SA_ADDRESS = '$nsaaddress', SA_EMAIL = '$nsaemail', SA_CONTACT = '$nsacontact' , SA_HOURS = '$nsahours' where (SA.SA_STUDNUM= '$sastudnum')");
 
         echo "<script>alert('Added Successfully!');
 
